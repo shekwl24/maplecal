@@ -124,7 +124,7 @@
                                 </div>
                                 <label for="ssScore" class="col-sm-2 col-form-label">스세 점수</label>
                                 <div class="col-sm-2">
-                                    <input type="text" class="form-control" id="ssScore" value="30000" style="padding-right:0px;" readonly>
+                                    <input type="number" min="0" max="30000" step="1000" class="form-control" id="ssScore" style="padding-right:0px;">
                                 </div>
                             </div>
                         </div>
@@ -165,7 +165,7 @@
                                 중간값인 30코인 = 심볼1로 환산하여 계산
                             </p>
                             <p>
-                                스피릿 세이비어 점수는 30000점으로 고정
+                                스피릿 세이비어 점수는 3판 합산 점수 입력
                             </p>
                         </div>
                     </form>
@@ -242,12 +242,19 @@
                         $('#dreamLayer').attr("required", true);
                         $('#dreamLayer').val("");
                     }
+                    if (name == "arcn") {
+                        $('#ssScore').attr("required", true);
+                        $('#ssScore').val("");
+                    }
                 // 체크 박스 해제 시
                 } else {
                     $(`#${name}Level`).attr("required", false);
                     $(`#${name}Number`).attr("required", false);
                     if (name == "rhl") {
                         $('#dreamLayer').attr("required", false);
+                    }
+                    if (name == "arcn") {
+                        $('#ssScore').attr("required", false);
                     }
                     $(`#${name_input}`).hide();
                     cnt--;
@@ -296,7 +303,7 @@
                 if ($("#rhlCheckbox").is(":checked")) {
                     level = parseInt($("#rhlLevel").val());
                     num = parseInt($("#rhlNumber").val());
-                    layer = parseInt($("#dreamLayer").val());
+                    let layer = parseInt($("#dreamLayer").val());
                     let layerCoin;
                     if (layer < 170) layerCoin = layer * 3;
                     else layerCoin = 500;
@@ -314,11 +321,13 @@
                     level = parseInt($("#arcnLevel").val());
                     num = parseInt($("#arcnNumber").val());
                     total_meso += etc_calMeso(level);
+                    let ssScore = parseInt($("#ssScore").val());
+                    let ssCoin = ssScore / 1000;
 
                     $('#tbody-content').append(`
                         <tr>
                             <td><img src="SymbolImage/arcnSymbol.png" width="43" height="43"></td>
-                            <td style="vertical-align:middle;">${calDate(level, num, 8+10)}</td>
+                            <td style="vertical-align:middle;">${calDate(level, num, 8+(ssCoin/3))}</td>
                             <td style="vertical-align:middle;">${etc_calMeso(level).toLocaleString()}</td>
                         </tr>
                     `);

@@ -69,3 +69,10 @@ div.col-sm-2 {
 [class*='col-'] {
     transition: all 0.5s ease-in-out;
 }
+
+/* input태그 증, 감소 버튼 제거 */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
