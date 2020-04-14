@@ -33,13 +33,13 @@ function required_symbol(level, number) {
 function calDate(level, number, symbol_perDay) {
     let today = new Date();
     let required_day = Math.ceil(required_symbol(level, number) / symbol_perDay);
-    
+
     today.setDate(today.getDate() + required_day);
     let year = today.getFullYear(); // 년도
     let month = today.getMonth() + 1;  // 월
     let date = today.getDate();  // 날짜
     let day = today.getDay();  // 요일
-    let maxLevelDate = year + '년' + month + '월' + date + '일';
+    let maxLevelDate = year + '년' + month + '월' + date + '일' + ' (' + required_day + '일)';
 
     return maxLevelDate;
 }
