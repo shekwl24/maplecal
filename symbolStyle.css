@@ -5,7 +5,7 @@ body,table,div,p {
 }
 h2, p, tr {
     text-align:center;
-
+    vertical-align:middle;
 }
 h2 {
     color:rgb(17,164,210);
@@ -15,12 +15,13 @@ p {
     font-size:15px;
 }
 
-td {
-    vertical-align:middle;
-}
-
 label {
     font-size:20px;
+}
+
+img {
+    max-width:100%;
+    height:auto;
 }
 
 .container {
@@ -62,7 +63,7 @@ div.col-2 {
 
 div.col-sm-2 {
     padding-right:0px;
-    padding-left: 5px;
+    padding-left:5px;
 }
 
 /* result 애니메이션 */
@@ -75,4 +76,28 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+@media (max-width:370px) {
+    th {
+        font-size:13px;
+    }
+    tr {
+        font-size:13px;
+    }
+    input[type=checkbox] {
+        zoom:2.0;
+    }
+}
+
+@media (max-width:340px) {
+    th {
+        font-size:12px;
+    }
+    tr {
+        font-size:12px;
+    }
+    input[type=checkbox] {
+        zoom:2.0;
+    }
 }

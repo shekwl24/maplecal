@@ -30,7 +30,7 @@
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="smeyrCheckbox">
                                     <label class="custom-control-label" for="smeyrCheckbox">
-                                        <img src="SymbolImage\smeyrSymbol.png" align="right" width="43" height="43" title="소멸의 여로"></label>
+                                        <img src="SymbolImage\smeyrSymbol.png" width="43" height="43" title="소멸의 여로"></label>
                                 </div>
                             </div>
                             <div class="col-2">
@@ -277,26 +277,26 @@
                 if ($("#smeyrCheckbox").is(":checked")) {
                     let level = parseInt($("#smeyrLevel").val());
                     let num = parseInt($("#smeyrNumber").val());
-                    total_meso += smeyr_calMeso(level);
+                    total_meso += smeyrCalMeso(level);
 
                     $('#tbody-content').append(`
                       <tr>
                           <td><img src="SymbolImage/smeyrSymbol.png" width="43" height="43"></td>
                           <td style="vertical-align:middle;">${calDate(level, num, 14)}</td>
-                          <td style="vertical-align:middle;">${smeyr_calMeso(level).toLocaleString()}</td>
+                          <td style="vertical-align:middle;">${smeyrCalMeso(level).toLocaleString()}</td>
                       </tr>
                     `);
                 }
                 if ($("#ccCheckbox").is(":checked")) {
                     level = parseInt($("#ccLevel").val());
                     num = parseInt($("#ccNumber").val());
-                    total_meso += etc_calMeso(level);
+                    total_meso += etcCalMeso(level);
 
                     $('#tbody-content').append(`
                         <tr>
                             <td><img src="SymbolImage/ccSymbol.png" width="43" height="43"></td>
                             <td style="vertical-align:middle;">${calDate(level, num, 19)}</td>
-                            <td style="vertical-align:middle;">${etc_calMeso(level).toLocaleString()}</td>
+                            <td style="vertical-align:middle;">${etcCalMeso(level).toLocaleString()}</td>
                         </tr>
                     `);
                 }
@@ -307,20 +307,20 @@
                     let layerCoin;
                     if (layer < 170) layerCoin = layer * 3;
                     else layerCoin = 500;
-                    total_meso += etc_calMeso(level);
+                    total_meso += etcCalMeso(level);
 
                     $('#tbody-content').append(`
                         <tr>
                             <td><img src="SymbolImage/rhlSymbol.png" width="43" height="43"></td>
                             <td style="vertical-align:middle;">${calDate(level, num, 4+(layerCoin/30)+1)}</td>
-                            <td style="vertical-align:middle;">${etc_calMeso(level).toLocaleString()}</td>
+                            <td style="vertical-align:middle;">${etcCalMeso(level).toLocaleString()}</td>
                         </tr>
                     `);
                 }
                 if ($("#arcnCheckbox").is(":checked")) {
                     level = parseInt($("#arcnLevel").val());
                     num = parseInt($("#arcnNumber").val());
-                    total_meso += etc_calMeso(level);
+                    total_meso += etcCalMeso(level);
                     let ssScore = parseInt($("#ssScore").val());
                     let ssCoin = ssScore / 1000;
 
@@ -328,33 +328,33 @@
                         <tr>
                             <td><img src="SymbolImage/arcnSymbol.png" width="43" height="43"></td>
                             <td style="vertical-align:middle;">${calDate(level, num, 8+(ssCoin/3))}</td>
-                            <td style="vertical-align:middle;">${etc_calMeso(level).toLocaleString()}</td>
+                            <td style="vertical-align:middle;">${etcCalMeso(level).toLocaleString()}</td>
                         </tr>
                     `);
                 }
                 if ($("#mrsCheckbox").is(":checked")) {
                     level = parseInt($("#mrsLevel").val());
                     num = parseInt($("#mrsNumber").val());
-                    total_meso += etc_calMeso(level);
+                    total_meso += etcCalMeso(level);
 
                     $('#tbody-content').append(`
                         <tr>
                             <td><img src="SymbolImage/mrsSymbol.png" width="43" height="43"></td>
                             <td style="vertical-align:middle;">${calDate(level, num, 8)}</td>
-                            <td style="vertical-align:middle;">${etc_calMeso(level).toLocaleString()}</td>
+                            <td style="vertical-align:middle;">${etcCalMeso(level).toLocaleString()}</td>
                         </tr>
                     `);
                 }
                 if ($("#asprCheckbox").is(":checked")) {
                     level = parseInt($("#asprLevel").val());
                     num = parseInt($("#asprNumber").val());
-                    total_meso += etc_calMeso(level);
+                    total_meso += etcCalMeso(level);
 
                     $('#tbody-content').append(`
                         <tr>
                             <td><img src="SymbolImage/asprSymbol.png" width="43" height="43"></td>
                             <td style="vertical-align:middle;">${calDate(level, num, 8)}</td>
-                            <td style="vertical-align:middle;">${etc_calMeso(level).toLocaleString()}</td>
+                            <td style="vertical-align:middle;">${etcCalMeso(level).toLocaleString()}</td>
                         </tr>
                     `);
                 }
