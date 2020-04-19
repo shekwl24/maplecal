@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163705785-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-163705785-1');
+    </script>
+
+    <title>Maplecal - 메이플 계산기</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="CalculatorFavicon.ico">
+    <link rel="stylesheet" href="homeStyle.css">
+    <link rel="stylesheet" href="monsterParkStyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- 내비 바-->
+    <nav class="navbar navbar-light justify-content-center">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">심볼</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  active" href="monsterPark.html">몬스터 파크</a>
+          </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <!-- 입력 폼-->
+            <div class="col-lg-6 offset-lg-3" id="col-input">
+                <!-- 제목 -->
+                <div class="card border-info text-dark" style="margin-bottom:10px;">
+                    <div class="card-body">
+                        <h2 style="margin-bottom:0px;">몬파 계산기</h2>
+                    </div>
+                </div>
+                <!-- 입력 -->
+                <!-- 요일 선택 -->
+                <div class="card border-info text-dark" style="margin-bottom:20px;">
+                    <div class="card-body" id="card-check-day">
+                        <div class="form-group row justify-content-center">
+                            <div class="col-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" name="selectDay" class="custom-control-input" id="monCheckbox">
+                                    <label class="custom-control-label" for="monCheckbox">
+                                        <img src="decoImage\mondayDeco.png" width="60" height="40" title="월"></label>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" name="selectDay" class="custom-control-input" id="tuesCheckbox">
+                                    <label class="custom-control-label" for="tuesCheckbox">
+                                        <img src="decoImage\tuesdayDeco.png" width="60" height="40" title="화"></label>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" name="selectDay" class="custom-control-input" id="wednesCheckbox">
+                                    <label class="custom-control-label" for="wednesCheckbox">
+                                        <img src="decoImage\wednesdayDeco.png" width="60" height="40" title="수"></label>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" name="selectDay" class="custom-control-input" id="thursCheckbox">
+                                    <label class="custom-control-label" for="thursCheckbox">
+                                        <img src="decoImage\thursdayDeco.png" width="60" height="40" title="목"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row justify-content-center">
+                            <div class="col-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" name="selectDay" class="custom-control-input" id="friCheckbox">
+                                    <label class="custom-control-label" for="friCheckbox">
+                                        <img src="decoImage\fridayDeco.png" width="60" height="40" title="금"></label>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" name="selectDay" class="custom-control-input" id="saturCheckbox">
+                                    <label class="custom-control-label" for="saturCheckbox">
+                                        <img src="decoImage\saturdayDeco.png" width="60" height="40" title="토"></label>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" name="selectDay" class="custom-control-input" id="sunCheckbox">
+                                    <label class="custom-control-label" for="sunCheckbox">
+                                        <img src="decoImage\sundayDeco.png" width="60" height="40" title="일"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 클리어 횟수, 메포 사용여부 입력 -->
+                    <form id="form-input">
+                        <div class="eachInput" id="mon-input">
+                            <label class="big">월요일</label>
+                            <div class="form-group row" style="margin-bottom:5px;">
+                                <label for="monCount" class="col-sm-2 col-form-label">클리어 횟수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="0" max="76" class="form-control" id="monCount">
+                                </div>
+                                <label for="monUseMepo" class="col-sm-2 col-form-label">메포 사용
+                                    <input type="checkbox" id="monUseMepo"></label>
+                            </div>
+                        </div>
+                        <div class="eachInput" id="tues-input">
+                            <label class="big">화요일</label>
+                            <div class="form-group row" style="margin-bottom:5px;">
+                                <label for="tuesCount" class="col-sm-2 col-form-label">클리어 횟수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="0" max="76" class="form-control" id="tuesCount">
+                                </div>
+                                <label for="tuesUseMepo" class="col-sm-2 col-form-label">메포 사용
+                                    <input type="checkbox" id="tuesUseMepo"></label>
+                            </div>
+                        </div>
+                        <div class="eachInput" id="wednes-input">
+                            <label class="big">수요일</label>
+                            <div class="form-group row" style="margin-bottom:5px;">
+                                <label for="wednesCount" class="col-sm-2 col-form-label">클리어 횟수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="0" max="76" class="form-control" id="wednesCount">
+                                </div>
+                                <label for="wednesUseMepo" class="col-sm-2 col-form-label">메포 사용
+                                    <input type="checkbox" id="wednesUseMepo"></label>
+                            </div>
+                        </div>
+                        <div class="eachInput" id="thurs-input">
+                            <label class="big">목요일</label>
+                            <div class="form-group row" style="margin-bottom:5px;">
+                                <label for="thursCount" class="col-sm-2 col-form-label">클리어 횟수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="0" max="76" class="form-control" id="thursCount">
+                                </div>
+                                <label for="thursUseMepo" class="col-sm-2 col-form-label">메포 사용
+                                    <input type="checkbox" id="thursUseMepo"></label>
+                            </div>
+                        </div>
+                        <div class="eachInput" id="fri-input">
+                            <label class="big">금요일</label>
+                            <div class="form-group row" style="margin-bottom:5px;">
+                                <label for="friCount" class="col-sm-2 col-form-label">클리어 횟수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="0" max="76" class="form-control" id="friCount">
+                                </div>
+                                <label for="friUseMepo" class="col-sm-2 col-form-label">메포 사용
+                                    <input type="checkbox" id="friUseMepo"></label>
+                            </div>
+                        </div>
+                        <div class="eachInput" id="satur-input">
+                            <label class="big">토요일</label>
+                            <div class="form-group row" style="margin-bottom:5px;">
+                                <label for="saturCount" class="col-sm-2 col-form-label">클리어 횟수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="0" max="76" class="form-control" id="saturCount">
+                                </div>
+                                <label for="saturUseMepo" class="col-sm-2 col-form-label">메포 사용
+                                    <input type="checkbox" id="saturUseMepo"></label>
+                            </div>
+                        </div>
+                        <div class="eachInput" id="sun-input">
+                            <label class="big">일요일</label>
+                            <div class="form-group row" style="margin-bottom:5px;">
+                                <label for="sunCount" class="col-sm-2 col-form-label">클리어 횟수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="0" max="76" class="form-control" id="sunCount">
+                                </div>
+                                <label for="sunUseMepo" class="col-sm-2 col-form-label">메포 사용
+                                    <input type="checkbox" id="sunUseMepo"></label>
+                            </div>
+                        </div>
+                        <button type="submit" class="big btn btn-primary btn-block" id="btn-run" style="display:none; margin-top:10px;">계산</button>
+                        <!-- description -->
+                        <div class="info">
+                            <p style="font-weight:bold">
+                                획득 하고자하는 요일 훈장을 선택하시오.
+                            </p>
+                            <p>
+                                하루 2판 무료, 5판 x 300원 = 1,500원으로 계산
+                            </p>
+                            <p>
+                                마지막 날, 2판 이하 남을 시 메포 계산x
+                            </p>
+                            <p>
+                                훈장 사진 오른쪽 하단에 요일 표시
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- 출력 폼 -->
+            <div class="col-lg-5" id="col-output" style="display: none;">
+                <!-- 제목 -->
+                <div class="card border-info text-dark" style="margin-bottom:10px;">
+                    <div class="card-body">
+                        <h2 style="margin-bottom:0px;">결과</h2>
+                    </div>
+                </div>
+                <!-- 결과값 테이블 출력 -->
+                <div class="card border-info text-dark" style="margin-bottom:20px;">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    훈장
+                                </th>
+                                <th scope="col">
+                                    획득 날짜
+                                </th>
+                                <th scope="col">
+                                    누적 메포
+                                </th>
+                            </tr>
+                        </thead>
+                        <!-- 동적으로 출력 -->
+                        <tbody id="tbody-content">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-2"></div>
+    <!-- 머리 말 -->
+    <footer>
+        <p>
+            Copyright 2020 ⓒ maplecal All rights reserved <br />
+            Contact email : <a href="mailto:shekwl24@gmail.com">shekwl24@gmail.com</a>
+        </p>
+    </footer>
+    <script src="monsterParkResultFn.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            let cnt = 0;
+
+            // 체크박스 클릭 시 event
+            $("input:checkbox[name=selectDay]").click(function() {
+                var name = $(this).attr('id');
+                name = name.slice(0, -8);
+                name_input = name + "-input";
+
+                // 체크박스 체크 시
+                if ($(this).is(":checked")) {
+                    cnt++;
+
+                    $(`#${name_input}`).show();
+                    $("#btn-run").show();
+                    $(".info").hide();
+                    $(`#${name}Count`).val("");
+                    $(`#${name}UseMepo`).attr("checked", false);
+                    $(`#${name}Count`).attr("required", true);
+                // 체크 박스 해제 시
+                } else {
+                    cnt--;
+                    $(`#${name}Count`).attr("required", false);
+                    $(`#${name_input}`).hide();
+                    if (cnt == 0) {
+                        $(".info").show();
+                        $("#btn-run").hide();
+                    }
+                }
+            });
+
+            // 계산 버튼 클릭 이후 이벤트
+            function run() {
+                let total_mepo = 0;
+                var day = ["mon", "tues", "wednes", "thurs", "fri", "satur", "sun"];
+
+                $('#tbody-content').empty();
+                $('#col-input').removeClass('offset-lg-3');
+                setTimeout(() => {
+                    $('#col-output').css("display", "");
+                }, 500);
+
+                for (var i = 0; i < 7; i++) {
+                    if ($(`#${day[i]}Checkbox`).is(":checked")) {
+                        let count = parseInt($(`#${day[i]}Count`).val());
+                        let useMepo = $(`#${day[i]}UseMepo`).is(":checked");
+                        total_mepo += calMepo(count, useMepo);
+
+                        $('#tbody-content').append(`
+                          <tr>
+                              <td><img src="decoImage/${day[i]}dayDeco.png" width="60" height="40"></td>
+                              <td style="vertical-align:middle;">${calDate(i, count, useMepo)}</td>
+                              <td style="vertical-align:middle;">${calMepo(count, useMepo).toLocaleString()}</td>
+                          </tr>
+                        `);
+                    }
+                }
+                $('#tbody-content').append(`
+                    <tr>
+                        <td></td>
+                        <td style="vertical-align:middle;">누적 메포</td>
+                        <td style="vertical-align:middle;">${total_mepo.toLocaleString()}</td>
+                    </tr>`);
+            }
+
+            <!-- 이벤트 처리 전 새로고침 방지 -->
+            $("#form-input").submit(function(event) {
+                event.preventDefault(); // 새로 고침 방지
+                run(); // 실행
+            });
+        });
+    </script>
+</body>
+
+</html>

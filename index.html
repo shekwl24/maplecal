@@ -5,22 +5,41 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163705785-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'UA-163705785-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-163705785-1');
     </script>
 
-    <title>심볼 계산기</title>
+    <title>Maplecal - 메이플 계산기</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="symbolImg.ico">
+    <link rel="shortcut icon" href="CalculatorFavicon.ico">
+    <link rel="stylesheet" href="homeStyle.css">
     <link rel="stylesheet" href="symbolStyle.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
+    <!-- 내비 바-->
+    <nav class="navbar navbar-light justify-content-center">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html">심볼</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="monsterPark.html">몬스터 파크</a>
+            </li>
+        </ul>
+    </nav>
+
     <div class="container">
         <div class="row">
             <!-- 입력 폼-->
@@ -35,7 +54,7 @@
                 <!-- 심볼 선택 -->
                 <div class="card border-info text-dark" style="margin-bottom:20px;">
                     <div class="card-body" id="card-check-symbol">
-                        <div class="form-group row">
+                        <div class="form-group row justify-content-center">
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="smeyrCheckbox">
@@ -162,7 +181,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="big btn btn-primary btn-block" id="btn-run" style="display:none; margin-top:20px;">계산</button>
+                        <button type="submit" class="big btn btn-primary btn-block" id="btn-run" style="display:none; margin-top:10px;">계산</button>
                         <!-- description -->
                         <div class="info">
                             <p style="font-weight:bold">
@@ -201,7 +220,7 @@
                                     달성 날짜
                                 </th>
                                 <th scope="col">
-                                    업그레이드 비용
+                                    누적 메소
                                 </th>
                             </tr>
                         </thead>
@@ -213,18 +232,15 @@
             </div>
         </div>
     </div>
-    <div class="col-2">
-    </div>
+    <div class="col-2"></div>
     <!-- 머리 말 -->
     <footer>
         <p>
-            Copyright 2020 ⓒ maplecal All rights reserved
-        </p>
-        <p>
+            Copyright 2020 ⓒ maplecal All rights reserved <br />
             Contact email : <a href="mailto:shekwl24@gmail.com">shekwl24@gmail.com</a>
         </p>
     </footer>
-    <script src="resultFn.js"></script>
+    <script src="symbolResultFn.js"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -241,6 +257,7 @@
                 // 체크박스 체크 시
                 if ($(this).is(":checked")) {
                     cnt++;
+
                     $(`#${name_input}`).show();
                     $("#btn-run").show();
                     $(".info").hide();
@@ -256,8 +273,10 @@
                         $('#ssScore').attr("required", true);
                         $('#ssScore').val("");
                     }
-                // 체크 박스 해제 시
+                    // 체크 박스 해제 시
                 } else {
+                    cnt--;
+
                     $(`#${name}Level`).attr("required", false);
                     $(`#${name}Number`).attr("required", false);
                     if (name == "rhl") {
@@ -267,11 +286,11 @@
                         $('#ssScore').attr("required", false);
                     }
                     $(`#${name_input}`).hide();
-                    cnt--;
                     if (cnt == 0) {
                         $(".info").show();
                         $("#btn-run").hide();
                     }
+
                 }
             });
 
@@ -376,7 +395,8 @@
                     </tr>`);
             }
 
-            <!-- 이벤트 처리 전 새로고침 방지 -->
+            <
+            !--이벤트 처리 전 새로고침 방지-- >
             $("#form-input").submit(function(event) {
                 event.preventDefault(); // 새로 고침 방지
                 run(); // 실행

@@ -14,13 +14,13 @@ div.col-2 {
     padding-left:0px;
 }
 
-#card-check-symbol {
+#card-check-day {
     padding-bottom:0px;
     margin-left: 10px;
 }
 
 /* 심볼 체크박스 아래 선 */
-#card-check-symbol:after {
+#card-check-day:after {
     content:"";
     display:block;
     width:100%;
@@ -66,7 +66,6 @@ input[type="number"]::-webkit-inner-spin-button {
     tr {
         font-size:13px;
     }
-
 }
 
 @media (max-width:340px) {
@@ -76,5 +75,4 @@ input[type="number"]::-webkit-inner-spin-button {
     tr {
         font-size:12px;
     }
-
 }
