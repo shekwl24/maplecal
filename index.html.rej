@@ -1,0 +1,32 @@
+diff a/index.html b/index.html	(rejected hunks)
+@@ -277,26 +277,26 @@
+                 if ($("#smeyrCheckbox").is(":checked")) {
+                     let level = parseInt($("#smeyrLevel").val());
+                     let num = parseInt($("#smeyrNumber").val());
+-                    total_meso += smeyr_calMeso(level);
++                    total_meso += smeyrCalMeso(level);
+ 
+                     $('#tbody-content').append(`
+                       <tr>
+                           <td><img src="SymbolImage/smeyrSymbol.png" width="43" height="43"></td>
+                           <td style="vertical-align:middle;">${calDate(level, num, 14)}</td>
+-                          <td style="vertical-align:middle;">${smeyr_calMeso(level).toLocaleString()}</td>
++                          <td style="vertical-align:middle;">${smeyrCalMeso(level).toLocaleString()}</td>
+                       </tr>
+                     `);
+                 }
+                 if ($("#ccCheckbox").is(":checked")) {
+                     level = parseInt($("#ccLevel").val());
+                     num = parseInt($("#ccNumber").val());
+-                    total_meso += etc_calMeso(level);
++                    total_meso += etcCalMeso(level);
+ 
+                     $('#tbody-content').append(`
+                         <tr>
+                             <td><img src="SymbolImage/ccSymbol.png" width="43" height="43"></td>
+                             <td style="vertical-align:middle;">${calDate(level, num, 19)}</td>
+-                            <td style="vertical-align:middle;">${etc_calMeso(level).toLocaleString()}</td>
++                            <td style="vertical-align:middle;">${etcCalMeso(level).toLocaleString()}</td>
+                         </tr>
+                     `);
+                 }
