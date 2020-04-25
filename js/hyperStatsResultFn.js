@@ -42,7 +42,7 @@ function resultByStat(statNumber, level){
         else return "획득 경험치 " + (level - 5) + "%";
     }
     else {
-        if(level <= 10) return "아케인포스 " + (level * 5) + "%";
+        if(level <= 10) return "아케인포스 " + (level * 5);
         else return "아케인포스 " + (10 * level - 50);
     }
 }
