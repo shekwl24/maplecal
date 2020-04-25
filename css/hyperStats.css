@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap');
+
+label {
+    margin-left:20px;
+    padding-right:0px;
+    padding-left:0px;
+    font-size:15px;
+}
+
+#form-input {
+    display:none;
+}
+
+#form-output {
+    display:none;
+    margin-bottom:0px !important;
+    background-color:white !important;
+    padding:0px;
+}
+
+#small-row {
+    padding-left:20px;
+    padding-right:35px;
+}
+
+#level-check {
+    padding-bottom:0px;
+}
+
+/* 심볼 체크박스 아래 선 */
+#level-check:after {
+    content:"";
+    display:block;
+    width:100%;
+    border-bottom:1px solid #bcbcbc;
+    margin:20px 0px;
+}
+
+.input-group-text {
+    width:130px;
+}
+
+@media (max-width:767px) {
+    #form-input {
+        padding-right:0px;
+        margin-bottom:20px;
+    }
+    #form-output {
+        margin-left:15px;
+    }
+}

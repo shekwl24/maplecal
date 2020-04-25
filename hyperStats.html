@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163705785-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-163705785-1');
+    </script>
+
+    <title>Maplecal - 메이플 계산기</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="CalculatorFavicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/indexStyle.css">
+    <link rel="stylesheet" href="css/hyperStats.css">
+</head>
+
+<body>
+    <!-- 내비 바-->
+    <nav class="navbar navbar-light justify-content-center">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expand="false">계산기</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="symbol.html">심볼</a>
+                <a class="dropdown-item" href="monsterPark.html">몬스터 파크</a>
+                <a class="dropdown-item" href="hyperStats.html">하이퍼 스텟</a>
+              </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <!-- 입력 폼-->
+            <div class="col-lg-6 offset-lg-3" id="col-input">
+                <!-- 제목 -->
+                <div class="card border-info text-dark" style="margin-bottom:10px;">
+                    <div class="card-body">
+                        <h2>하이퍼스텟 계산기</h2>
+                    </div>
+                </div>
+                <!-- 입력 -->
+                <!-- 레벨 입력-->
+                <div class="card border-info text-dark" style="margin-bottom:20px;">
+                    <div class="card-body" id="level-check">
+                        <div class="form-row">
+                          <div class="form-group col-md-6" style="margin:0px;">
+                            <label for="level">레벨</label>
+                            <div col-3>
+                                <input type="number" min="140" max="275" class="form-control" id="level">
+                            </div>
+                          </div>
+                          <div class="form-group col-md-6" style="margin:0px;">
+                            <label for="point">남은 포인트</label>
+                            <input type="text" class="form-control" id="point" value="0" readonly>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- 스텟 입력 -->
+                    <div class="row" id="small-row">
+                        <form class="col-md-6" id="form-input">
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">STR</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="15" value="0" id="stat-0">
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">DEX</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="15" value="0" id="stat-1">
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">INT</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="15" value="0" id="stat-2">
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">LUK</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="15" value="0" id="stat-3">
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">HP</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="15" value="0" id="stat-4">
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">MP</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="15" value="0" id="stat-5">
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">DF/TF/PP</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="10" value="0" id="stat-6">
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">크리티컬 확률</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="15" value="0" id="stat-7">
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">크리티컬 데미지</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="15" value="0" id="stat-8">
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">방어율 무시</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="15" value="0" id="stat-9">
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">데미지</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="15" value="0" id="stat-10">
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">보스데미지</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="15" value="0" id="stat-11">
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">상태이상내성</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="15" value="0" id="stat-12">
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">스탠스</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="10" value="0" id="stat-13">
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">공격력 / 마력</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="15" value="0" id="stat-14">
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">획득 경험치</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="15" value="0" id="stat-15">
+                            </div>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">아케인포스</span>
+                              </div>
+                              <input type="number" class="form-control" min="0" max="15" value="0" id="stat-16">
+                            </div>
+                        </form>
+                        <!-- Result -->
+                        <div class="card bg-light col-md-6" id="form-output" style="margin-bottom:5px;">
+                            <div class="card-body" style="padding:0px;">
+                                <h2 style="margin:20px !important;">결과</h2>
+                                <div id="result-text"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="big btn btn-primary btn-block" id="btn-reset" style="display:none; margin-top:15px;">초기화</button>
+                    <!-- description -->
+                    <div class="info">
+                        <p style="font-weight:bold">
+                            현재 레벨, 혹은 계산하고자 하는 레벨을 입력하시오.
+                        </p>
+                        <p>
+                            레벨 범위는 140 ~ 275
+                        </p>
+                        <p>
+                            계산 오류 시 아래 메일로 문의바람
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-2"></div>
+    <!-- 머리 말 -->
+    <footer>
+        <p>
+            Copyright 2020 ⓒ maplecal All rights reserved <br />
+            Contact email : <a href="mailto:shekwl24@gmail.com">shekwl24@gmail.com</a>
+        </p>
+    </footer>
+    <script src="js/hyperStatsResultFn.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            let currentHsLevel = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 변동 전 하이퍼스텟 레벨
+            let usedPoint = 0; // 사용된 포인트
+
+            // input값 실시간 감지
+            $("input").on("change keyup paste", function() {
+                // 레벨 입력 감지
+                if($(this).attr('id') === "level") {
+                    let level = parseInt($("#level").val());
+
+                    if(level >= 140 && level <= 275) {
+                        $("#point").val(charLevelToHs(level) - usedPoint);
+                        $("#form-input").show();
+                        $("#form-output").show();
+                        $(".info").hide();
+                        $("#btn-reset").show();
+                    } else {
+                        $(".info").show();
+                        $("#form-input").hide();
+                        $("#form-output").hide();
+                        $("#point").val(0);
+                        $("#btn-reset").hide();
+                    }
+                // 하이퍼 스텟 레벨이 바뀌었을 때
+                } else {
+                    let statId = $(this).attr('id');
+                    statId = parseInt(statId.slice(5, statId.length));
+                    let num = parseInt($(this).val());
+                    let point = parseInt($("#point").val());
+
+                    if(num >= 0 && num <= 15) {
+                        // 하이퍼 스텟 레벨이 증가 됐을 때
+                        if(currentHsLevel[statId] < num) {
+                                $("#point").val(point - (hsLevelToHs(num) - hsLevelToHs(currentHsLevel[statId])));
+                                usedPoint += hsLevelToHs(num) - hsLevelToHs(currentHsLevel[statId]);
+                                currentHsLevel[statId] = num;
+                        // 하이퍼 스텟 레벨이 감소 됐을 때
+                        } else if(currentHsLevel[statId] > num){
+                            $("#point").val(point + (hsLevelToHs(currentHsLevel[statId]) - hsLevelToHs(num)));
+                            usedPoint -= hsLevelToHs(currentHsLevel[statId]) - hsLevelToHs(num);
+                            currentHsLevel[statId] = num;
+                        }
+                    }
+
+                    // 결과 출력
+                    $("#result-text").empty();
+                    for(let i = 0; i < 17; i++) {
+                        if(currentHsLevel[i] != 0) {
+                            $("#result-text").append(`
+                                <p style="margin-bottom:9px;">${resultByStat(i, currentHsLevel[i])}</p>
+                            `);
+                        }
+                    }
+                }
+            });
+
+            // 초기화 버튼 event
+            $("#btn-reset").click(function() {
+                $("#result-text").empty();
+                $("#point").val(charLevelToHs(parseInt($("#level").val())));
+                usedPoint = 0;
+                for(let i = 0; i < 17; i++) {
+                    currentHsLevel[i] = 0;
+                    $(`#stat-${i}`).val(0);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

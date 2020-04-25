@@ -16,24 +16,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="CalculatorFavicon.ico">
-    <link rel="stylesheet" href="indexStyle.css">
-    <link rel="stylesheet" href="monsterParkStyle.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/indexStyle.css">
+    <link rel="stylesheet" href="css/monsterParkStyle.css">
 </head>
 
 <body>
     <!-- 내비 바-->
     <nav class="navbar navbar-light justify-content-center">
         <ul class="nav nav-pills">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="symbol.html">심볼</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link  active" href="monsterPark.html">몬스터 파크</a>
-          </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expand="false">계산기</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="symbol.html">심볼</a>
+                <a class="dropdown-item" href="monsterPark.html">몬스터 파크</a>
+                <a class="dropdown-item" href="hyperStats.html">하이퍼 스텟</a>
+              </div>
+            </li>
         </ul>
     </nav>
     <div class="container">
@@ -43,7 +44,7 @@
                 <!-- 제목 -->
                 <div class="card border-info text-dark" style="margin-bottom:10px;">
                     <div class="card-body">
-                        <h2 style="margin-bottom:0px;">몬파 계산기</h2>
+                        <h2>몬파 계산기</h2>
                     </div>
                 </div>
                 <!-- 입력 -->
@@ -207,7 +208,7 @@
                 <!-- 제목 -->
                 <div class="card border-info text-dark" style="margin-bottom:10px;">
                     <div class="card-body">
-                        <h2 style="margin-bottom:0px;">결과</h2>
+                        <h2>결과</h2>
                     </div>
                 </div>
                 <!-- 결과값 테이블 출력 -->
@@ -242,7 +243,7 @@
             Contact email : <a href="mailto:shekwl24@gmail.com">shekwl24@gmail.com</a>
         </p>
     </footer>
-    <script src="monsterParkResultFn.js"></script>
+    <script src="js/monsterParkResultFn.js"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -312,7 +313,7 @@
                     </tr>`);
             }
 
-            <!-- 이벤트 처리 전 새로고침 방지 -->
+            // 이벤트 처리 전 새로고침 방지
             $("#form-input").submit(function(event) {
                 event.preventDefault(); // 새로 고침 방지
                 run(); // 실행
