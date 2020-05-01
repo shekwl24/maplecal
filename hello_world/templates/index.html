@@ -17,9 +17,9 @@
     <title>Maplecal - 메이플 계산기</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="CalculatorFavicon.ico">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/CalculatorFavicon.ico') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/indexStyle.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/indexStyle.css') }}">
 
 </head>
 
@@ -28,13 +28,13 @@
     <nav class="navbar navbar-light justify-content-center">
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link active" href="index.html">Home</a>
+                <a class="nav-link active" href="index">Home</a>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expand="false">계산기</a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="symbol.html">심볼</a>
-                <a class="dropdown-item" href="monsterPark.html">몬스터 파크</a>
-                <a class="dropdown-item" href="hyperStats.html">하이퍼 스텟</a>
+                <a class="dropdown-item" href="symbol">심볼</a>
+                <a class="dropdown-item" href="monsterPark">몬스터 파크</a>
+                <a class="dropdown-item" href="hyperStats">하이퍼 스텟</a>
               </div>
             </li>
         </ul>

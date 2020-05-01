@@ -15,10 +15,10 @@
     <title>Maplecal - 메이플 계산기</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="CalculatorFavicon.ico">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/CalculatorFavicon.ico') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/indexStyle.css">
-    <link rel="stylesheet" href="css/monsterParkStyle.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/indexStyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/monsterParkStyle.css') }}">
 </head>
 
 <body>
@@ -26,13 +26,13 @@
     <nav class="navbar navbar-light justify-content-center">
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="index">Home</a>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle active" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expand="false">계산기</a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="symbol.html">심볼</a>
-                <a class="dropdown-item" href="monsterPark.html">몬스터 파크</a>
-                <a class="dropdown-item" href="hyperStats.html">하이퍼 스텟</a>
+                <a class="dropdown-item" href="symbol">심볼</a>
+                <a class="dropdown-item" href="monsterPark">몬스터 파크</a>
+                <a class="dropdown-item" href="hyperStats">하이퍼 스텟</a>
               </div>
             </li>
         </ul>
@@ -56,28 +56,28 @@
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" name="selectDay" class="custom-control-input" id="monCheckbox">
                                     <label class="custom-control-label" for="monCheckbox">
-                                        <img src="decoImage\mondayDeco.png" width="60" height="40" title="월"></label>
+                                        <img src="static\img\decoImage\mondayDeco.png" width="60" height="40" title="월"></label>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" name="selectDay" class="custom-control-input" id="tuesCheckbox">
                                     <label class="custom-control-label" for="tuesCheckbox">
-                                        <img src="decoImage\tuesdayDeco.png" width="60" height="40" title="화"></label>
+                                        <img src="static\img\decoImage\tuesdayDeco.png" width="60" height="40" title="화"></label>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" name="selectDay" class="custom-control-input" id="wednesCheckbox">
                                     <label class="custom-control-label" for="wednesCheckbox">
-                                        <img src="decoImage\wednesdayDeco.png" width="60" height="40" title="수"></label>
+                                        <img src="static\img\decoImage\wednesdayDeco.png" width="60" height="40" title="수"></label>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" name="selectDay" class="custom-control-input" id="thursCheckbox">
                                     <label class="custom-control-label" for="thursCheckbox">
-                                        <img src="decoImage\thursdayDeco.png" width="60" height="40" title="목"></label>
+                                        <img src="static\img\decoImage\thursdayDeco.png" width="60" height="40" title="목"></label>
                                 </div>
                             </div>
                         </div>
@@ -86,21 +86,21 @@
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" name="selectDay" class="custom-control-input" id="friCheckbox">
                                     <label class="custom-control-label" for="friCheckbox">
-                                        <img src="decoImage\fridayDeco.png" width="60" height="40" title="금"></label>
+                                        <img src="static\img\decoImage\fridayDeco.png" width="60" height="40" title="금"></label>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" name="selectDay" class="custom-control-input" id="saturCheckbox">
                                     <label class="custom-control-label" for="saturCheckbox">
-                                        <img src="decoImage\saturdayDeco.png" width="60" height="40" title="토"></label>
+                                        <img src="static\img\decoImage\saturdayDeco.png" width="60" height="40" title="토"></label>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" name="selectDay" class="custom-control-input" id="sunCheckbox">
                                     <label class="custom-control-label" for="sunCheckbox">
-                                        <img src="decoImage\sundayDeco.png" width="60" height="40" title="일"></label>
+                                        <img src="static\img\decoImage\sundayDeco.png" width="60" height="40" title="일"></label>
                                 </div>
                             </div>
                         </div>
@@ -243,7 +243,7 @@
             Contact email : <a href="mailto:shekwl24@gmail.com">shekwl24@gmail.com</a>
         </p>
     </footer>
-    <script src="js/monsterParkResultFn.js"></script>
+    <script src="{{ url_for('static',filename='js/monsterParkResultFn.js') }}"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -298,7 +298,7 @@
 
                         $('#tbody-content').append(`
                           <tr>
-                              <td><img src="decoImage/${day[i]}dayDeco.png" width="60" height="40"></td>
+                              <td><img src="static/img/decoImage/${day[i]}dayDeco.png" width="60" height="40"></td>
                               <td style="vertical-align:middle;">${calDate(i, count, useMepo)}</td>
                               <td style="vertical-align:middle;">${calMepo(count, useMepo).toLocaleString()}</td>
                           </tr>
