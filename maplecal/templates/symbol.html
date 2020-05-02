@@ -195,6 +195,10 @@
                             </p>
                         </div>
                     </form>
+                    <form class="form-inline justify-content-center" style="margin-bottom:20px;" action="/result" method="post">
+                      <input class="form-control mr-sm-2" type="search" placeholder="닉네임" aria-label="Search" name="nickname">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search">검색</button>
+                    </form>
                 </div>
             </div>
             <!-- 출력 폼 -->
@@ -244,6 +248,20 @@
     <script>
         $(function() {
             let cnt = 0;
+
+            $('#search').click(function() {
+                $.ajax({
+                    url: '/result',
+                    data: $('form').serialize(),
+                    type: 'POST',
+                    success: function(response) {
+                        alert("성공")
+                    },
+                    error: function(error) {
+                        alert("실패")
+                    }
+                });
+            });
 
             // 체크박스 클릭 시 event
             $(":checkbox").click(function() {
@@ -391,7 +409,6 @@
                         <td style="vertical-align:middle;">${total_meso.toLocaleString()}</td>
                     </tr>`);
             }
-
 
             // 이벤트 처리 전 새로고침 방지
             $("#form-input").submit(function(event) {
