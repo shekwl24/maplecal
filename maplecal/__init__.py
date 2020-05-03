@@ -1,10 +1,10 @@
-import time
+import time, json
 
 from flask import Flask, render_template, request
 from selenium import webdriver
 from bs4 import BeautifulSoup
 from urllib.parse import quote_plus
-from multiprocessing import Pool
+
 
 app = Flask(__name__)
 
@@ -54,17 +54,26 @@ def result():
 
     level = []
     number = []
+
     for i in range(1, 7):
-        strr = '.ac_pot0' + str(i)
-        driver.find_element_by_css_selector(strr).click();
+        strr = 'ac_pot0' + str(i)
+        driver.find_element_by_css_selector('.' + strr).click();
         html = driver.page_source
         soup = BeautifulSoup(html, 'lxml')
-        level.append(soup.find_all('div', class_='point_td')[0].text)
-        number.append(soup.find_all('div', class_='point_td')[1].text.split()[0])
+
+        abcd = soup.select('.' + strr + ' img')[0]
+
+        if abcd.get('alt') == '':
+            level.append(0)
+            number.append(0)
+        else:
+            level.append(int(soup.find_all('div', class_='point_td')[0].text))
+            number.append(int(soup.find_all('div', class_='point_td')[1].text.split()[0]))
 
     driver.quit()
+    dict = {'levels' : level, 'numbers' : number}
 
-    return render_template('result.html', level = level, number = number)
+    return json.dumps(dict)
 
 @app.route('/index')
 def index2():

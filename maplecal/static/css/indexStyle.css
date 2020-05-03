@@ -3,12 +3,12 @@
 body,table,div,p {
     font-family:'Noto Sans KR',sans-serif;
 }
-h1, h2, p, tr {
+h1, h2, p, tr, ul, li {
     text-align:center;
     vertical-align:middle;
 }
 
-p {
+p, ul, li {
     font-size:15px;
 }
 
