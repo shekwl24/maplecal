@@ -33,7 +33,7 @@ def result():
     nickname = request.form['nickname']
 
     url = baseUrl + '/Ranking/World/Total?c=' + quote_plus(nickname)
-    driver = webdriver.Chrome(r'C:\test\maplecal\chromedriver', options=options)
+    driver = webdriver.Chrome(r'C:\app\maplecal\chromedriver', options=options)
     driver.get(url)
     html = driver.page_source
     soup = BeautifulSoup(html, 'lxml')
