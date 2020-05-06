@@ -2,10 +2,10 @@
 메이플스토리 게임을 더 재밌게 즐길 수 있도록 도와주는 웹사이트입니다.
 
 # 개발환경
-사용 언어 : JavaScript, Python, Html, Css, Jquery
-서버 : Apache
-프레임워크 : Flask, Bootstrap
-라이브러리 : Selenium, BeautifulSoup
+* 사용 언어 : JavaScript, Python, Html, Css, Jquery
+* 서버 : Apache
+* 프레임워크 : Flask, Bootstrap
+* 라이브러리 : Selenium, BeautifulSoup
 
 # 기능
 * 심볼 계산기
