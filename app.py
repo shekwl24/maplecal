@@ -33,7 +33,7 @@ def result():
     nickname = request.form['nickname']
 
     url = baseUrl + '/Ranking/World/Total?c=' + quote_plus(nickname)
-    driver = webdriver.Chrome(r'C:\app\maplecal\chromedriver', options=options)
+    driver = webdriver.Chrome(r'chromedriver.exe', options=options)
     driver.get(url)
     html = driver.page_source
     soup = BeautifulSoup(html, 'lxml')
@@ -92,4 +92,4 @@ def index5():
     return render_template('hyperStats.html')
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run()
