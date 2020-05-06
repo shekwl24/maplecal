@@ -5,11 +5,14 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163705785-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'UA-163705785-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-163705785-1');
     </script>
 
     <title>Maplecal - 메이플 계산기</title>
@@ -28,12 +31,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="index">Home</a>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expand="false">계산기</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="symbol">심볼</a>
-                <a class="dropdown-item" href="monsterPark">몬스터 파크</a>
-                <a class="dropdown-item" href="hyperStats">하이퍼 스텟</a>
-              </div>
+                <a class="nav-link dropdown-toggle active" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expand="false">계산기</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="symbol">심볼</a>
+                    <a class="dropdown-item" href="monsterPark">몬스터 파크</a>
+                    <a class="dropdown-item" href="hyperStats">하이퍼 스텟</a>
+                </div>
             </li>
         </ul>
     </nav>
@@ -240,7 +243,8 @@
     <footer>
         <p>
             Copyright 2020 ⓒ maplecal All rights reserved <br />
-            Contact email : <a href="mailto:shekwl24@gmail.com">shekwl24@gmail.com</a>
+            Contact email : <a href="mailto:shekwl24@gmail.com">shekwl24@gmail.com</a> <br />
+            openSource : <a href="https://github.com/shekwl24/maplecal">github.com/shekwl24/maplecal</a>
         </p>
     </footer>
     <script src="{{ url_for('static',filename='js/monsterParkResultFn.js') }}"></script>
@@ -267,7 +271,7 @@
                     $(`#${name}Count`).val("");
                     $(`#${name}UseMepo`).attr("checked", false);
                     $(`#${name}Count`).attr("required", true);
-                // 체크 박스 해제 시
+                    // 체크 박스 해제 시
                 } else {
                     cnt--;
                     $(`#${name}Count`).attr("required", false);

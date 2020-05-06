@@ -1,50 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap');
 
 label {
-    font-size:20px;
+    font-size: 20px;
 }
 
 img {
-    max-width:100%;
-    height:auto;
+    max-width: 100%;
+    height: auto;
 }
 
 div.col-2 {
-    padding-right:0px;
-    padding-left:0px;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
 #card-check-symbol {
-    padding-bottom:0px;
+    padding-bottom: 0px;
     margin-left: 10px;
 }
 
 /* 심볼 체크박스 아래 선 */
 #card-check-symbol:after {
-    content:"";
-    display:block;
-    width:100%;
-    border-bottom:1px solid #bcbcbc;
-    margin:20px 0px;
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #bcbcbc;
+    margin: 20px 0px;
 }
 
 .eachInput {
-    display:none;
-    margin-left:20px;
-    margin-bottom:15px;
-    margin-right:20px;
+    display: none;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    margin-right: 20px;
 }
 
 .col-sm-2.col-form-label {
-    margin-left:20px;
-    padding-right:0px;
-    padding-left:0px;
-    font-size:15px;
+    margin-left: 20px;
+    padding-right: 0px;
+    padding-left: 0px;
+    font-size: 15px;
 }
 
 div.col-sm-2 {
-    padding-right:0px;
-    padding-left:5px;
+    padding-right: 0px;
+    padding-left: 5px;
 }
 
 /* result 애니메이션 */
@@ -61,20 +61,20 @@ input[type="number"]::-webkit-inner-spin-button {
 
 @media (max-width:370px) {
     th {
-        font-size:13px;
-    }
-    tr {
-        font-size:13px;
+        font-size: 13px;
     }
 
+    tr {
+        font-size: 13px;
+    }
 }
 
 @media (max-width:340px) {
     th {
-        font-size:12px;
-    }
-    tr {
-        font-size:12px;
+        font-size: 12px;
     }
 
+    tr {
+        font-size: 12px;
+    }
 }

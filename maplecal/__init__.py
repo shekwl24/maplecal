@@ -50,7 +50,7 @@ def result():
         fUrl += i
 
     driver.get(fUrl)
-    driver.execute_script("chg_tab(3);")
+    driver.execute_script("chg_tab(3);") # 아케인 클릭 event(JavaScript)
 
     level = []
     number = []
@@ -63,7 +63,7 @@ def result():
 
         abcd = soup.select('.' + strr + ' img')[0]
 
-        if abcd.get('alt') == '':
+        if abcd.get('alt') == '': # 획득한 심볼이 없다면
             level.append(0)
             number.append(0)
         else:
@@ -73,7 +73,7 @@ def result():
     driver.quit()
     dict = {'levels' : level, 'numbers' : number}
 
-    return json.dumps(dict)
+    return json.dumps(dict) # json형태 dict{'levels' : [0, 0, 0, 0, 0, 0], 'numbers' : [0, 0, 0, 0, 0, 0]}
 
 @app.route('/index')
 def index2():
