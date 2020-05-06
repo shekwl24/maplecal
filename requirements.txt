@@ -2,6 +2,7 @@ beautifulsoup4==4.9.0
 click==7.1.2
 Cython==0.29.17
 ez-setup==0.9
+gunicorn==20.0.4
 Flask==1.1.2
 itsdangerous==1.1.0
 Jinja2==2.11.2
