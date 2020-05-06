@@ -14,13 +14,17 @@
 
         gtag('config', 'UA-163705785-1');
     </script>
-
-    <title>Maplecal - 메이플 계산기</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Maplecal - 메이플 계산기</title>
+
+    <meta name="keywords" content="메이플 계산기, 심볼 계산기, 몬파 계산기, 하이퍼 스텟 계산기">
+    <meta name="description" content="메이플 게임상 비용을 지불하고 초기화 해야하는 문제를 해결하기 위해 똑같은 기능을 구현한 계산기">
+    <link rel="canonical" href="https://maplecal.com/hyperStats">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/CalculatorFavicon.ico') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/indexStyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homeStyle.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/hyperStatsStyle.css') }}">
 </head>
 
@@ -29,7 +33,7 @@
     <nav class="navbar navbar-light justify-content-center">
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link" href="index">Home</a>
+                <a class="nav-link" href="home">Home</a>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle active" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expand="false">계산기</a>
                 <div class="dropdown-menu">
@@ -205,7 +209,7 @@
         <p>
             Copyright 2020 ⓒ maplecal All rights reserved <br />
             Contact email : <a href="mailto:shekwl24@gmail.com">shekwl24@gmail.com</a> <br />
-            openSource : <a href="https://github.com/shekwl24/maplecal">github.com/shekwl24/maplecal</a>
+            OpenSource : <a href="https://github.com/shekwl24/maplecal">github.com/shekwl24/maplecal</a>
         </p>
     </footer>
     <script src="{{ url_for('static',filename='js/hyperStatsResultFn.js') }}"></script>

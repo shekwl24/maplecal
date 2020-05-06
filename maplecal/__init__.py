@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index1():
-    return render_template('index.html')
+    return render_template('home.html')
 
 @app.route('/result', methods = ['POST'])
 def result():
@@ -75,9 +75,9 @@ def result():
 
     return json.dumps(dict) # json형태 dict{'levels' : [0, 0, 0, 0, 0, 0], 'numbers' : [0, 0, 0, 0, 0, 0]}
 
-@app.route('/index')
+@app.route('/home')
 def index2():
-    return render_template('index.html')
+    return render_template('home.html')
 
 @app.route('/symbol')
 def index3():
