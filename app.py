@@ -1,4 +1,4 @@
-import time, json
+import json, os
 
 from flask import Flask, render_template, request
 from selenium import webdriver
@@ -19,7 +19,10 @@ def result():
         result = request.form
 
     options = webdriver.ChromeOptions() # 크롬 옵션 객체 생성
-    options.add_argument('headless') # headless 모드 설정
+    options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    options.add_argument('--headless') # headless 모드 설정
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--no-sandbox')
     options.add_argument("window-size=1920x1080") # 화면크기(전체화면)
     options.add_argument("disable-gpu")
     options.add_argument("disable-infobars")
@@ -33,7 +36,7 @@ def result():
     nickname = request.form['nickname']
 
     url = baseUrl + '/Ranking/World/Total?c=' + quote_plus(nickname)
-    driver = webdriver.Chrome(r'chromedriver.exe', options=options)
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER PATH"), chrome_options=options)
     driver.get(url)
     html = driver.page_source
     soup = BeautifulSoup(html, 'lxml')
