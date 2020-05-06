@@ -7,7 +7,6 @@ itsdangerous==1.1.0
 Jinja2==2.11.2
 lxml==4.5.0
 MarkupSafe==1.1.1
-mod-wsgi @ file:///C:/mod_wsgi-4.7.1%2Bap24vc15-cp38-cp38-win32.whl
 selenium==3.141.0
 soupsieve==2.0
 urllib3==1.25.9
