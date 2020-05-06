@@ -18,15 +18,15 @@ def result():
     if request.method == 'POST':
         result = request.form
 
-    options = webdriver.ChromeOptions() # 크롬 옵션 객체 생성
-    options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-    options.add_argument('--headless') # headless 모드 설정
-    options.add_argument('--disable-dev-shm-usage')
-    options.add_argument('--no-sandbox')
-    options.add_argument("window-size=1920x1080") # 화면크기(전체화면)
-    options.add_argument("disable-gpu")
-    options.add_argument("disable-infobars")
-    options.add_argument("--disable-extensions")
+    chrome_options = webdriver.ChromeOptions() # 크롬 옵션 객체 생성
+    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    chrome_options.add_argument('--headless') # headless 모드 설정
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument("window-size=1920x1080") # 화면크기(전체화면)
+    chrome_options.add_argument("disable-gpu")
+    chrome_options.add_argument("disable-infobars")
+    chrome_options.add_argument("--disable-extensions")
 
     # 속도 향상을 위한 옵션 해제
     prefs = {'profile.default_content_setting_values': {'cookies' : 2, 'images': 2, 'plugins' : 2, 'popups': 2, 'geolocation': 2, 'notifications' : 2, 'auto_select_certificate': 2, 'fullscreen' : 2, 'mouselock' : 2, 'mixed_script': 2, 'media_stream' : 2, 'media_stream_mic' : 2, 'media_stream_camera': 2, 'protocol_handlers' : 2, 'ppapi_broker' : 2, 'automatic_downloads': 2, 'midi_sysex' : 2, 'push_messaging' : 2, 'ssl_cert_decisions': 2, 'metro_switch_to_desktop' : 2, 'protected_media_identifier': 2, 'app_banner': 2, 'site_engagement' : 2, 'durable_storage' : 2}}
@@ -36,7 +36,7 @@ def result():
     nickname = request.form['nickname']
 
     url = baseUrl + '/Ranking/World/Total?c=' + quote_plus(nickname)
-    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER PATH"), chrome_options=options)
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
     driver.get(url)
     html = driver.page_source
     soup = BeautifulSoup(html, 'lxml')
