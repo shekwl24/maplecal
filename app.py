@@ -28,7 +28,7 @@ def result():
     nickname = request.form['nickname']
     url = baseUrl + '/Ranking/World/Total?c=' + quote_plus(nickname)
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
-    driver.implicitly_wait(20)
+    driver.implicitly_wait(25)
 
     driver.get(url)
     driver.implicitly_wait(5)
@@ -56,6 +56,7 @@ def result():
     for i in range(1, 7):
         strr = 'ac_pot0' + str(i)
         driver.find_element_by_css_selector('.' + strr).click();
+        driver.implicitly_wait(5)
         html = driver.page_source
         soup = BeautifulSoup(html, 'lxml')
 
@@ -67,7 +68,7 @@ def result():
         else:
             level.append(int(soup.find_all('div', class_='point_td')[0].text))
             number.append(int(soup.find_all('div', class_='point_td')[1].text.split()[0]))
-        driver.implicitly_wait(5)
+
 
     driver.quit()
     dict = {'levels' : level, 'numbers' : number}
