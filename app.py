@@ -28,8 +28,10 @@ def result():
     nickname = request.form['nickname']
     url = baseUrl + '/Ranking/World/Total?c=' + quote_plus(nickname)
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+    driver.implicitly_wait(10)
 
     driver.get(url)
+    driver.implicitly_wait(5)
     html = driver.page_source
     soup = BeautifulSoup(html, 'lxml')
 
@@ -45,8 +47,9 @@ def result():
         fUrl += i
 
     driver.get(fUrl)
+    driver.implicitly_wait(2)
     driver.execute_script("chg_tab(3);") # 아케인 클릭 event(JavaScript)
-
+    driver.implicitly_wait(2)
     level = []
     number = []
 
@@ -64,6 +67,7 @@ def result():
         else:
             level.append(int(soup.find_all('div', class_='point_td')[0].text))
             number.append(int(soup.find_all('div', class_='point_td')[1].text.split()[0]))
+        driver.implicitly_wait(2)
 
     driver.quit()
     dict = {'levels' : level, 'numbers' : number}
