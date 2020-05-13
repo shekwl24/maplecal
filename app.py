@@ -1,4 +1,4 @@
-import json, os
+import json, os, time
 
 from flask import Flask, render_template, request
 from selenium import webdriver
@@ -17,7 +17,7 @@ def index1():
 def result():
     if request.method == 'POST':
         result = request.form
-
+    start = time.time()
     chrome_options = webdriver.ChromeOptions() # 크롬 옵션 객체 생성
     chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     chrome_options.add_argument("--headless")
@@ -27,10 +27,14 @@ def result():
     baseUrl = 'https://maplestory.nexon.com'
     nickname = request.form['nickname']
     url = baseUrl + '/Ranking/World/Total?c=' + quote_plus(nickname)
+    start1 = time.time() - start
+    start = time.time()
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+
     driver.get(url)
     html = driver.page_source
     soup = BeautifulSoup(html, 'lxml')
+    start2 = time.time() - start
 
     ass = soup.find_all("a")
     for a in ass:
@@ -49,7 +53,7 @@ def result():
     level = []
     number = []
 
-    for i in range(1, 7):
+    for i in range(1, 6):
         strr = 'ac_pot0' + str(i)
         driver.find_element_by_css_selector('.' + strr).click();
         html = driver.page_source
@@ -64,6 +68,10 @@ def result():
             level.append(int(soup.find_all('div', class_='point_td')[0].text))
             number.append(int(soup.find_all('div', class_='point_td')[1].text.split()[0]))
 
+    level.append(start1)
+    number.append(start2)
+    print(start1)
+    print(start2)
     driver.quit()
     dict = {'levels' : level, 'numbers' : number}
 
