@@ -122,7 +122,11 @@
                                     <input type="number" min="0" max="76" class="form-control" id="monCount">
                                 </div>
                                 <label for="monUseMepo" class="col-sm-2 col-form-label">메포 사용
-                                    <input type="checkbox" id="monUseMepo"></label>
+                                    <input type="checkbox" name="selectMepo" id="monUseMepo"></label>
+                                <label for="numberOfUses" class="col-sm-2 col-form-label">사용 횟수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="1" max="5" step="1" class="form-control" id="monUses" readonly>
+                                </div>
                             </div>
                         </div>
                         <div class="eachInput" id="tues-input">
@@ -133,7 +137,11 @@
                                     <input type="number" min="0" max="76" class="form-control" id="tuesCount">
                                 </div>
                                 <label for="tuesUseMepo" class="col-sm-2 col-form-label">메포 사용
-                                    <input type="checkbox" id="tuesUseMepo"></label>
+                                    <input type="checkbox" name="selectMepo" id="tuesUseMepo"></label>
+                                <label for="numberOfUses" class="col-sm-2 col-form-label">사용 횟수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="1" max="5" step="1" class="form-control" id="tuesUses" readonly>
+                                </div>
                             </div>
                         </div>
                         <div class="eachInput" id="wednes-input">
@@ -144,7 +152,11 @@
                                     <input type="number" min="0" max="76" class="form-control" id="wednesCount">
                                 </div>
                                 <label for="wednesUseMepo" class="col-sm-2 col-form-label">메포 사용
-                                    <input type="checkbox" id="wednesUseMepo"></label>
+                                    <input type="checkbox" name="selectMepo" id="wednesUseMepo"></label>
+                                <label for="numberOfUses" class="col-sm-2 col-form-label">사용 횟수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="1" max="5" step="1" class="form-control" id="wednesUses" readonly>
+                                </div>
                             </div>
                         </div>
                         <div class="eachInput" id="thurs-input">
@@ -155,7 +167,11 @@
                                     <input type="number" min="0" max="76" class="form-control" id="thursCount">
                                 </div>
                                 <label for="thursUseMepo" class="col-sm-2 col-form-label">메포 사용
-                                    <input type="checkbox" id="thursUseMepo"></label>
+                                    <input type="checkbox" name="selectMepo" id="thursUseMepo"></label>
+                                <label for="numberOfUses" class="col-sm-2 col-form-label">사용 횟수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="1" max="5" step="1" class="form-control" id="thursUses" readonly>
+                                </div>
                             </div>
                         </div>
                         <div class="eachInput" id="fri-input">
@@ -166,7 +182,11 @@
                                     <input type="number" min="0" max="76" class="form-control" id="friCount">
                                 </div>
                                 <label for="friUseMepo" class="col-sm-2 col-form-label">메포 사용
-                                    <input type="checkbox" id="friUseMepo"></label>
+                                    <input type="checkbox" name="selectMepo" id="friUseMepo"></label>
+                                <label for="numberOfUses" class="col-sm-2 col-form-label">사용 횟수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="1" max="5" step="1" class="form-control" id="friUses" readonly>
+                                </div>
                             </div>
                         </div>
                         <div class="eachInput" id="satur-input">
@@ -177,7 +197,11 @@
                                     <input type="number" min="0" max="76" class="form-control" id="saturCount">
                                 </div>
                                 <label for="saturUseMepo" class="col-sm-2 col-form-label">메포 사용
-                                    <input type="checkbox" id="saturUseMepo"></label>
+                                    <input type="checkbox" name="selectMepo" id="saturUseMepo"></label>
+                                <label for="numberOfUses" class="col-sm-2 col-form-label">사용 횟수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="1" max="5" step="1" class="form-control" id="saturUses" readonly>
+                                </div>
                             </div>
                         </div>
                         <div class="eachInput" id="sun-input">
@@ -188,17 +212,24 @@
                                     <input type="number" min="0" max="76" class="form-control" id="sunCount">
                                 </div>
                                 <label for="sunUseMepo" class="col-sm-2 col-form-label">메포 사용
-                                    <input type="checkbox" id="sunUseMepo"></label>
+                                    <input type="checkbox" name="selectMepo" id="sunUseMepo"></label>
+                                <label for="numberOfUses" class="col-sm-2 col-form-label">사용 횟수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="1" max="5" step="1" class="form-control" id="sunUses" readonly>
+                                </div>
                             </div>
                         </div>
                         <button type="submit" class="big btn btn-primary btn-block" id="btn-run" style="display:none; margin-top:10px;">계산</button>
                         <!-- description -->
                         <div class="info">
                             <p style="font-weight:bold">
-                                획득 하고자하는 요일 훈장을 선택하시오.
+                                획득 하고자하는 요일 훈장을 선택
                             </p>
                             <p>
-                                하루 2판 무료, 5판 x 300원 = 1,500원으로 계산
+                                클리어 횟수는 현재까지 클리어한 횟수를 적어주시면 됩니다.
+                            </p>
+                            <p>
+                                하루 2판 무료, 이 후 메포를 사용하여 플레이 할 횟수 입력
                             </p>
                             <p>
                                 마지막 날, 2판 이하 남을 시 메포 계산x
@@ -259,7 +290,7 @@
         $(function() {
             let cnt = 0;
 
-            // 체크박스 클릭 시 event
+            // 날짜 선택 체크박스 클릭 시 event
             $("input:checkbox[name=selectDay]").click(function() {
                 var name = $(this).attr('id');
                 name = name.slice(0, -8);
@@ -275,6 +306,8 @@
                     $(`#${name}Count`).val("");
                     $(`#${name}UseMepo`).attr("checked", false);
                     $(`#${name}Count`).attr("required", true);
+                    $(`#${name}Uses`).attr("readonly", true);
+                    $(`#${name}Uses`).val("");
                     // 체크 박스 해제 시
                 } else {
                     cnt--;
@@ -284,6 +317,20 @@
                         $(".info").show();
                         $("#btn-run").hide();
                     }
+                }
+            });
+
+            // 메포 사용 여부 체크 시
+            $("input:checkbox[name=selectMepo]").click(function() {
+                var name = $(this).attr('id');
+                name = name.slice(0, -7);
+
+                // 체크박스 체크 시
+                if ($(this).is(":checked")) {
+                    $(`#${name}Uses`).removeAttr("readonly")
+                    // 체크 박스 해제 시
+                } else {
+                    $(`#${name}Uses`).attr("readonly", true);
                 }
             });
 
@@ -301,14 +348,15 @@
                 for (var i = 0; i < 7; i++) {
                     if ($(`#${day[i]}Checkbox`).is(":checked")) {
                         let count = parseInt($(`#${day[i]}Count`).val());
-                        let useMepo = $(`#${day[i]}UseMepo`).is(":checked");
-                        total_mepo += calMepo(count, useMepo);
+                        let uses = 0;
+                        if ($(`#${day[i]}UseMepo`).is(":checked")) uses = parseInt($(`#${day[i]}Uses`).val());
+                        total_mepo += calMepo(count, uses);
 
                         $('#tbody-content').append(`
                           <tr>
                               <td><img src="static/img/decoImage/${day[i]}dayDeco.png" width="60" height="40"></td>
-                              <td style="vertical-align:middle;">${calDate(i, count, useMepo)}</td>
-                              <td style="vertical-align:middle;">${calMepo(count, useMepo).toLocaleString()}</td>
+                              <td style="vertical-align:middle;">${calDate(i, count, uses)}</td>
+                              <td style="vertical-align:middle;">${calMepo(count, uses).toLocaleString()}</td>
                           </tr>
                         `);
                     }

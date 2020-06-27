@@ -1,5 +1,6 @@
 // 훈장 획득까지 날짜 계산
-function calDate(i, count, useMepo) {
+function calDate(i, count, uses) {
+    var clearPerDay = uses + 2
     var j = i + 1;
     if (j == 7) j = 0;
 
@@ -10,7 +11,7 @@ function calDate(i, count, useMepo) {
     if (today.getDay() > j) gap = 7 - (today.getDay() - j);
     else if (today.getDay() < j) gap = j - today.getDay();
 
-    if (useMepo) week = Math.ceil((77 - count) / 7);
+    if (uses != 0) week = Math.ceil((77 - count) / clearPerDay);
     else week = Math.ceil((77 - count) / 2);
 
     today.setDate(today.getDate() + gap + ((week - 1) * 7));
@@ -25,7 +26,8 @@ function calDate(i, count, useMepo) {
 }
 
 // 메포 계산
-function calMepo(count, useMepo) {
-    if (useMepo) return (Math.floor((77 - count) / 7) * 1500) + Math.max((((77 - count) % 7) - 2) * 300, 0);
+function calMepo(count, uses) {
+    var useMepoPerDay = uses * 300;
+    if (uses != 0) return (Math.floor((77 - count) / (uses + 2)) * useMepoPerDay) + Math.max((((77 - count) % (uses + 2)) - 2) * 300, 0);
     else return 0;
 }
