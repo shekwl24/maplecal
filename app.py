@@ -26,7 +26,7 @@ def result():
 
     baseUrl = 'https://maplestory.nexon.com'
     nickname = request.form['nickname']
-    url = baseUrl + '/Ranking/World/Total?c=' + quote_plus(nickname)
+    url = baseUrl + '/Ranking/Union?c=' + quote_plus(nickname)
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
     driver.get(url)
@@ -66,7 +66,7 @@ def result():
 
     driver.quit()
     dict = {'levels' : level, 'numbers' : number}
-
+    print(dict)
     return json.dumps(dict) # json형태 dict{'levels' : [0, 0, 0, 0, 0, 0], 'numbers' : [0, 0, 0, 0, 0, 0]}
 
 @app.route('/home')
