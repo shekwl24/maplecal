@@ -63,7 +63,7 @@
                             <div class="form-group col-md-6" style="margin:0px;">
                                 <label for="level">레벨</label>
                                 <div col-3>
-                                    <input type="number" min="140" max="275" class="form-control" id="level">
+                                    <input type="number" min="140" max="300" class="form-control" id="level">
                                 </div>
                             </div>
                             <div class="form-group col-md-6" style="margin:0px;">
@@ -193,7 +193,7 @@
                             현재 레벨, 혹은 계산하고자 하는 레벨을 입력하시오.
                         </p>
                         <p>
-                            레벨 범위는 140 ~ 275
+                            레벨 범위는 140 ~ 300
                         </p>
                         <p>
                             계산 오류 시 아래 메일로 문의바람
@@ -227,7 +227,7 @@
                 if ($(this).attr('id') === "level") {
                     let level = parseInt($("#level").val());
 
-                    if (level >= 140 && level <= 275) {
+                    if (level >= 140 && level <= 300) {
                         $("#point").val(charLevelToHs(level) - usedPoint);
                         $("#form-input").show();
                         $("#form-output").show();
