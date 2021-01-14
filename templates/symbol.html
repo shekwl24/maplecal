@@ -61,42 +61,51 @@
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="smeyrCheckbox">
                                     <label class="custom-control-label" for="smeyrCheckbox">
-                                        <img src="static\img\SymbolImage\smeyrSymbol.png" width="43" height="43" title="소멸의 여로"></label>
+                                        <img src="static\img\SymbolImage\smeyrSymbol.png" width="60" height="40" title="소멸의 여로"></label>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="ccCheckbox">
                                     <label class="custom-control-label" for="ccCheckbox">
-                                        <img src="static\img\SymbolImage\ccSymbol.png" width="43" height="43" title="츄츄 아일랜드"></label>
+                                        <img src="static\img\SymbolImage\ccSymbol.png" width="60" height="40" title="츄츄 아일랜드"></label>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="rhlCheckbox">
                                     <label class="custom-control-label" for="rhlCheckbox">
-                                        <img src="static\img\SymbolImage\rhlSymbol.png" width="43" height="43" title="레헬른"></label>
+                                        <img src="static\img\SymbolImage\rhlSymbol.png" width="60" height="40" title="레헬른"></label>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="arcnCheckbox">
                                     <label class="custom-control-label" for="arcnCheckbox">
-                                        <img src="static\img\SymbolImage\arcnSymbol.png" width="43" height="43" title="아르카나"></label>
+                                        <img src="static\img\SymbolImage\arcnSymbol.png" width="60" height="40" title="아르카나"></label>
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-group row justify-content-center">
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="mrsCheckbox">
                                     <label class="custom-control-label" for="mrsCheckbox">
-                                        <img src="static\img\SymbolImage\mrsSymbol.png" width="43" height="43" title="모라스"></label>
+                                        <img src="static\img\SymbolImage\mrsSymbol.png" width="60" height="40" title="모라스"></label>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="asprCheckbox">
                                     <label class="custom-control-label" for="asprCheckbox">
-                                        <img src="static\img\SymbolImage\asprSymbol.png" width="43" height="43" title="에스페라"></label>
+                                        <img src="static\img\SymbolImage\asprSymbol.png" width="60" height="40" title="에스페라"></label>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="athenCheckbox">
+                                    <label class="custom-control-label" for="athenCheckbox">
+                                        <img src="static\img\SymbolImage\athenSymbol.png" width="60" height="40" title="세르니움"></label>
                                 </div>
                             </div>
                         </div>
@@ -187,6 +196,18 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="eachInput" id="athen-input">
+                            <label class="big">세르니움</label>
+                            <div class="form-group row" style="margin-bottom:5px;">
+                                <label for="athenLevel" class="col-sm-2 col-form-label">레벨 / 개수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="1" max="10" class="form-control" id="athenLevel">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="number" min="0" max="1100" class="form-control" id="athenNumber">
+                                </div>
+                            </div>
+                        </div>
                         <button type="submit" class="big btn btn-primary btn-block" id="btn-run" style="display:none; margin-top:10px;">계산</button>
                         <!-- description -->
                         <div class="info">
@@ -198,6 +219,9 @@
                             </p>
                             <p>
                                 현재 데이터 불러오는데 20 ~ 25초 정도 소요 (개선중)
+                            </p>
+                            <p>
+                                어센틱 심볼은 데이터를 가져올 수가 없어서 따로 입력이 필요합니다.
                             </p>
                             <p>
                                 ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
@@ -215,7 +239,10 @@
                                 중간값인 30코인 = 심볼1로 환산하여 계산
                             </p>
                             <p>
-                                스피릿 세이비어 점수는 3판 합산 점수 입력
+                                스피릿 세이비어 점수는 3판 합산 점수 입력 ex)30000
+                            </p>
+                            <p>
+                                리버스 시티, 얌얌 아일랜드 탐험 완료로 계산
                             </p>
                         </div>
                     </form>
@@ -374,7 +401,7 @@
                     $('#tbody-content').append(`
                       <tr>
                           <td><img src="static/img/SymbolImage/smeyrSymbol.png" width="43" height="43"></td>
-                          <td style="vertical-align:middle;">${calDate(level, num, 14)}</td>
+                          <td style="vertical-align:middle;">${calDate(level, num, 22)}</td>
                           <td style="vertical-align:middle;">${smeyrCalMeso(level).toLocaleString()}</td>
                       </tr>
                     `);
@@ -387,7 +414,7 @@
                     $('#tbody-content').append(`
                         <tr>
                             <td><img src="static/img/SymbolImage/ccSymbol.png" width="43" height="43"></td>
-                            <td style="vertical-align:middle;">${calDate(level, num, 19)}</td>
+                            <td style="vertical-align:middle;">${calDate(level, num, 23)}</td>
                             <td style="vertical-align:middle;">${etcCalMeso(level).toLocaleString()}</td>
                         </tr>
                     `);
@@ -450,12 +477,26 @@
                         </tr>
                     `);
                 }
+                if ($("#athenCheckbox").is(":checked")) {
+                    level = parseInt($("#athenLevel").val());
+                    num = parseInt($("#athenNumber").val());
+                    total_meso += athenCalMeso(level);
+
+                    $('#tbody-content').append(`
+                        <tr>
+                            <td><img src="static/img/SymbolImage/athenSymbol.png" width="43" height="43"></td>
+                            <td style="vertical-align:middle;">${athenCalDate(level, num, 10)}</td>
+                            <td style="vertical-align:middle;">${athenCalMeso(level).toLocaleString()}</td>
+                        </tr>
+                    `);
+                }
                 $('#tbody-content').append(`
                     <tr>
                         <td></td>
                         <td style="vertical-align:middle;">합계 메소</td>
                         <td style="vertical-align:middle;">${total_meso.toLocaleString()}</td>
-                    </tr>`);
+                    </tr>
+                `);
             }
 
             // 이벤트 처리 전 새로고침 방지
