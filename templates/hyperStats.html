@@ -220,6 +220,8 @@
         $(function() {
             let currentHsLevel = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 변동 전 하이퍼스텟 레벨
             let usedPoint = 0; // 사용된 포인트
+            const MIN_LEVEL = 140;
+            const MAX_LEVEL = 300;
 
             // input값 실시간 감지
             $("input").on("change keyup paste", function() {
@@ -227,7 +229,7 @@
                 if ($(this).attr('id') === "level") {
                     let level = parseInt($("#level").val());
 
-                    if (level >= 140 && level <= 300) {
+                    if (level >= MIN_LEVEL && level <= MAX_LEVEL) {
                         $("#point").val(charLevelToHs(level) - usedPoint);
                         $("#form-input").show();
                         $("#form-output").show();
