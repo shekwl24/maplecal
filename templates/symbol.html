@@ -108,6 +108,13 @@
                                         <img src="static\img\SymbolImage\athenSymbol.png" width="60" height="40" title="세르니움"></label>
                                 </div>
                             </div>
+                            <div class="col-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="arcsCheckbox">
+                                    <label class="custom-control-label" for="arcsCheckbox">
+                                        <img src="static\img\SymbolImage\arcsSymbol.png" width="60" height="40" title="아르크스"></label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <form class="form-inline justify-content-center" style="margin-bottom:20px;" action="/result" method="post" id="loadForm">
@@ -205,6 +212,18 @@
                                 </div>
                                 <div class="col-sm-2">
                                     <input type="number" min="0" class="form-control" id="athenNumber">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="eachInput" id="arcs-input">
+                            <label class="big">아르크스</label>
+                            <div class="form-group row" style="margin-bottom:5px;">
+                                <label for="arcsLevel" class="col-sm-2 col-form-label">레벨 / 개수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="1" max="10" class="form-control" id="arcsLevel">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="number" min="0" class="form-control" id="arcsNumber">
                                 </div>
                             </div>
                         </div>
@@ -486,6 +505,19 @@
                         <tr>
                             <td><img src="static/img/SymbolImage/athenSymbol.png" width="43" height="43"></td>
                             <td style="vertical-align:middle;">${athenCalDate(level, num, 10)}</td>
+                            <td style="vertical-align:middle;">${athenCalMeso(level).toLocaleString()}</td>
+                        </tr>
+                    `);
+                }
+                if ($("#arcsCheckbox").is(":checked")) {
+                    level = parseInt($("#arcsLevel").val());
+                    num = parseInt($("#arcsNumber").val());
+                    total_meso += athenCalMeso(level);
+
+                    $('#tbody-content').append(`
+                        <tr>
+                            <td><img src="static/img/SymbolImage/arcsSymbol.png" width="43" height="43"></td>
+                            <td style="vertical-align:middle;">${athenCalDate(level, num, 5)}</td>
                             <td style="vertical-align:middle;">${athenCalMeso(level).toLocaleString()}</td>
                         </tr>
                     `);
