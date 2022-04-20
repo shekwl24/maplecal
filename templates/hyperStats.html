@@ -161,27 +161,21 @@
                             </div>
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">스탠스</span>
-                                </div>
-                                <input type="number" class="form-control" min="0" max="10" value="0" id="stat-14">
-                            </div>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
                                     <span class="input-group-text">공격력 / 마력</span>
                                 </div>
-                                <input type="number" class="form-control" min="0" max="15" value="0" id="stat-15">
+                                <input type="number" class="form-control" min="0" max="15" value="0" id="stat-14">
                             </div>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">획득 경험치</span>
                                 </div>
-                                <input type="number" class="form-control" min="0" max="15" value="0" id="stat-16">
+                                <input type="number" class="form-control" min="0" max="15" value="0" id="stat-15">
                             </div>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">아케인포스</span>
                                 </div>
-                                <input type="number" class="form-control" min="0" max="15" value="0" id="stat-17">
+                                <input type="number" class="form-control" min="0" max="15" value="0" id="stat-16">
                             </div>
                         </form>
                         <!-- Result -->
@@ -224,7 +218,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script>
         $(function() {
-            let currentHsLevel = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 변동 전 하이퍼스텟 레벨
+            let currentHsLevel = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 변동 전 하이퍼스텟 레벨
             let usedPoint = 0; // 사용된 포인트
             const MIN_LEVEL = 140;
             const MAX_LEVEL = 300;
@@ -271,7 +265,7 @@
 
                     // 결과 출력
                     $("#result-text").empty();
-                    for (let i = 0; i < 18; i++) {
+                    for (let i = 0; i < 17; i++) {
                         if (currentHsLevel[i] != 0) {
                             $("#result-text").append(`
                                 <p style="margin-bottom:9px;">${resultByStat(i, currentHsLevel[i])}</p>
@@ -286,7 +280,7 @@
                 $("#result-text").empty();
                 $("#point").val(charLevelToHs(parseInt($("#level").val())));
                 usedPoint = 0;
-                for (let i = 0; i < 18; i++) {
+                for (let i = 0; i < 17; i++) {
                     currentHsLevel[i] = 0;
                     $(`#stat-${i}`).val(0);
                 }

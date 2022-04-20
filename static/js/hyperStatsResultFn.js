@@ -41,9 +41,8 @@ function resultByStat(statNumber, level) {
         if (level <= 5) return "상태 이상 내성 " + level;
         else return "상태 이상 내성 " + (2 * level - 5);
     }
-    else if (statNumber == 14) return "스탠스 확률 " + (level * 2) + "%";
-    else if (statNumber == 15) return "공격력과 마력 " + (level * 3);
-    else if (statNumber == 16) {
+    else if (statNumber == 14) return "공격력과 마력 " + (level * 3);
+    else if (statNumber == 15) {
         if (level <= 10) return "획득 경험치 " + (level * 0.5) + "%";
         else return "획득 경험치 " + (level - 5) + "%";
     }
