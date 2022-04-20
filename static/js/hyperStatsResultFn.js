@@ -25,21 +25,29 @@ function resultByStat(statNumber, level) {
     else if (statNumber == 7) {
         if (level <= 5) return "크리티컬 확률 " + level + "%";
         else return "크리티컬 확률 " + (2 * level - 5) + "%";
-    } else if (statNumber == 8) return "크리티컬 데미지 " + level + "%";
+    }
+    else if (statNumber == 8) return "크리티컬 데미지 " + level + "%";
     else if (statNumber == 9) return "방어율 무시 " + (level * 3) + "%";
     else if (statNumber == 10) return "데미지 " + (level * 3) + "%";
     else if (statNumber == 11) {
         if (level <= 5) return "보스 몬스터 공격 시 데미지 " + (level * 3) + "%";
         else return "보스 몬스터 공격 시 데미지 " + (4 * level - 5) + "%";
-    } else if (statNumber == 12) {
+    }
+    else if (statNumber == 12) {
+        if (level <= 5) return "일반 몬스터 공격 시 데미지 " + (level * 3) + "%";
+        else return "일반 몬스터 공격 시 데미지 " + (4 * level - 5) + "%";
+    }
+    else if (statNumber == 13) {
         if (level <= 5) return "상태 이상 내성 " + level;
         else return "상태 이상 내성 " + (2 * level - 5);
-    } else if (statNumber == 13) return "스탠스 확률 " + (level * 2) + "%";
-    else if (statNumber == 14) return "공격력과 마력 " + (level * 3);
-    else if (statNumber == 15) {
+    }
+    else if (statNumber == 14) return "스탠스 확률 " + (level * 2) + "%";
+    else if (statNumber == 15) return "공격력과 마력 " + (level * 3);
+    else if (statNumber == 16) {
         if (level <= 10) return "획득 경험치 " + (level * 0.5) + "%";
         else return "획득 경험치 " + (level - 5) + "%";
-    } else {
+    }
+    else {
         if (level <= 10) return "아케인포스 " + (level * 5);
         else return "아케인포스 " + (10 * level - 50);
     }
