@@ -103,15 +103,22 @@
                             </div>
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="athenCheckbox">
-                                    <label class="custom-control-label" for="athenCheckbox">
-                                        <img src="static\img\SymbolImage\athenSymbol.png" width="60" height="40" title="세르니움"></label>
+                                    <input type="checkbox" class="custom-control-input" id="srnmCheckbox">
+                                    <label class="custom-control-label" for="srnmCheckbox">
+                                        <img src="static\img\SymbolImage\srnmSymbol.png" width="60" height="40" title="세르니움"></label>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="arksCheckbox">
+                                    <label class="custom-control-label" for="arksCheckbox">
+                                        <img src="static\img\SymbolImage\arksSymbol.png" width="60" height="40" title="아르크스"></label>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <form class="form-inline justify-content-center" style="margin-bottom:20px;" action="/result" method="post" id="loadForm">
-                      <input class="form-control col-5" style="margin-right:5px;" type="search" placeholder="닉네임" aria-label="Search" name="nickname">
+                      <input class="form-control col-5" style="margin-right:5px;" type="search" placeholder="준비 중.." aria-label="Search" name="nickname" disabled>
                       <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search">검색</button>
                     </form>
                     <!-- 레벨 / 개수 등 입력 -->
@@ -126,6 +133,10 @@
                                 <div class="col-sm-2">
                                     <input type="number" min="0" class="form-control" id="smeyrNumber">
                                 </div>
+                                <div class="col-sm-5 col-form-label">
+                                    <input class="form-check-input" type="checkbox" style="margin-top:7px; margin-left:0px;" value="" id="erdaSpectrum" checked>
+                                    <label class="form-check-label" style="font-size:15px; margin-left:20px;" for="erdaSpectrum">에르다 스펙트럼</label>
+                                </div>
                             </div>
                         </div>
                         <div class="eachInput" id="cc-input">
@@ -137,6 +148,10 @@
                                 </div>
                                 <div class="col-sm-2">
                                     <input type="number" min="0" class="form-control" id="ccNumber">
+                                </div>
+                                <div class="col-sm-5 col-form-label">
+                                    <input class="form-check-input" type="checkbox" style="margin-top:7px; margin-left:0px;" value="" id="hungryMuto" checked>
+                                    <label class="form-check-label" style="font-size:15px; margin-left:20px;" for="hungryMuto">배고픈 무토(어려움)</label>
                                 </div>
                             </div>
                         </div>
@@ -150,10 +165,14 @@
                                 <div class="col-sm-2">
                                     <input type="number" min="0" class="form-control" id="rhlNumber">
                                 </div>
-                                <label for="dreamLayer" class="col-sm-2 col-form-label">드림 층수</label>
-                                <div class="col-sm-2">
-                                    <input type="number" min="0" max="990" step="10" class="form-control" id="dreamLayer">
+                                <div class="col-sm-2 col-form-label" style="margin-left:0px; padding-left:15px;">
+                                    <input class="form-check-input" type="checkbox" style="margin-top:7px; margin-left:0px;" value="" id="dreamBreaker" checked>
+                                    <label class="form-check-label" style="font-size:15px; margin-left:20px;" for="dreamBreaker">드림</label>
                                 </div>
+                                <div class="col-sm-2">
+                                    <input type="number" placeholder="층수" min="0" max="990" step="10" class="form-control" id="dreamLayer">
+                                </div>
+
                             </div>
                         </div>
                         <div class="eachInput" id="arcn-input">
@@ -166,9 +185,12 @@
                                 <div class="col-sm-2">
                                     <input type="number" min="0" class="form-control" id="arcnNumber">
                                 </div>
-                                <label for="ssScore" class="col-sm-2 col-form-label">스세 점수</label>
+                                <div class="col-sm-2 col-form-label" style="margin-left:0px; padding-left:15px;">
+                                    <input class="form-check-input" type="checkbox" style="margin-top:7px; margin-left:0px;" value="" id="spritSaver" checked>
+                                    <label class="form-check-label" style="font-size:15px; margin-left:20px;" for="spritSaver">스세</label>
+                                </div>
                                 <div class="col-sm-2">
-                                    <input type="number" min="0" max="30000" step="1000" class="form-control" id="ssScore" style="padding-right:0px;">
+                                    <input type="number" placeholder="점수" value="30000" min="0" max="30000" step="1000" class="form-control" id="ssScore" style="padding-right:0px;">
                                 </div>
                             </div>
                         </div>
@@ -182,6 +204,10 @@
                                 <div class="col-sm-2">
                                     <input type="number" min="0" class="form-control" id="mrsNumber">
                                 </div>
+                                <div class="col-sm-5 col-form-label">
+                                    <input class="form-check-input" type="checkbox" style="margin-top:7px; margin-left:0px;" value="" id="enheimDefence" checked>
+                                    <label class="form-check-label" style="font-size:15px; margin-left:20px;" for="enheimDefence">엔하임 디펜스</label>
+                                </div>
                             </div>
                         </div>
                         <div class="eachInput" id="aspr-input">
@@ -194,17 +220,37 @@
                                 <div class="col-sm-2">
                                     <input type="number" min="0" class="form-control" id="asprNumber">
                                 </div>
+                                <div class="col-sm-5 col-form-label">
+                                    <input class="form-check-input" type="checkbox" style="margin-top:7px; margin-left:0px;" value="" id="protectAspr" checked>
+                                    <label class="form-check-label" style="font-size:15px; margin-left:20px;" for="protectAspr">프로텍트 에스페라</label>
+                                </div>
                             </div>
                         </div>
-                        <div class="eachInput" id="athen-input">
+                        <div class="eachInput" id="srnm-input">
                             <label class="big">세르니움</label>
                             <div class="form-group row" style="margin-bottom:5px;">
-                                <label for="athenLevel" class="col-sm-2 col-form-label">레벨 / 개수</label>
+                                <label for="srnmLevel" class="col-sm-2 col-form-label">레벨 / 개수</label>
                                 <div class="col-sm-2">
-                                    <input type="number" min="1" max="10" class="form-control" id="athenLevel">
+                                    <input type="number" min="1" max="10" class="form-control" id="srnmLevel">
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="number" min="0" class="form-control" id="athenNumber">
+                                    <input type="number" min="0" class="form-control" id="srnmNumber">
+                                </div>
+                                <div class="col-sm-5 col-form-label">
+                                    <input class="form-check-input" type="checkbox" style="margin-top:7px; margin-left:0px;" value="" id="burningSernium" checked>
+                                    <label class="form-check-label" style="font-size:15px; margin-left:20px;" for="burningSernium">불타는 세르니움</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="eachInput" id="arks-input">
+                            <label class="big">아르크스</label>
+                            <div class="form-group row" style="margin-bottom:5px;">
+                                <label for="arksLevel" class="col-sm-2 col-form-label">레벨 / 개수</label>
+                                <div class="col-sm-2">
+                                    <input type="number" min="1" max="10" class="form-control" id="arksLevel">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="number" min="0" class="form-control" id="arksNumber">
                                 </div>
                             </div>
                         </div>
@@ -215,28 +261,19 @@
                                 현재 만렙까지 달성한 심볼을 제외한 나머지 심볼을 선택하시오.
                             </p>
                             <p style="font-weight:bold">
-                                +닉네임을 통한 검색 기능 추가 (캐릭터 정보 공개 설정 필요)
+                                닉네임 검색 기능은 오류가 많아 비활성해두었습니다.
                             </p>
                             <p>
-                                현재 데이터 불러오는데 20 ~ 25초 정도 소요 (개선중)
+                                배고픈 무토는 난이도 '어려움' 기준
                             </p>
                             <p>
-                                어센틱 심볼은 데이터를 가져올 수가 없어서 따로 입력이 필요합니다.
-                            </p>
-                            <p>
-                                ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
-                            </p>
-                            <p>
-                                <a href="https://maplestory.nexon.com/MyMaple/Account/Character/Visibility" target="_blank">캐릭터 정보 공개 설정하러가기</a>
-                            </p>
-                            <p>
-                                ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑
+                                드림브레이커는 해당 캐릭의 층수를 10단위로 입력
                             </p>
                             <p>
                                 레헬른 NPC에게서 받는 드림 코인은 24 ~ 36개 중 랜덤이므로
                             </p>
                             <p>
-                                중간값인 30코인 = 심볼1개로 환산하여 계산
+                                중간값인 30코인 = 심볼 1개로 환산하여 계산
                             </p>
                             <p>
                                 스피릿 세이비어 점수는 3판 합산 점수 입력 ex)30000
@@ -340,7 +377,6 @@
             });
 
             let cnt = 0;
-            // 체크박스 클릭 시 event
             $(":checkbox").click(function() {
                 var name = $(this).attr('id');
                 name = name.slice(0, -8);
@@ -385,6 +421,22 @@
                 }
             });
 
+            $("#dreamBreaker").change(function() {
+                if($("#dreamBreaker").is(":checked")){
+                    $("#dreamLayer").attr('readonly', false);
+                } else {
+                    $("#dreamLayer").attr('readonly', true);
+                }
+            });
+
+            $("#spritSaver").change(function() {
+                if($("#spritSaver").is(":checked")){
+                    $("#ssScore").attr('readonly', false);
+                } else {
+                    $("#ssScore").attr('readonly', true);
+                }
+            });
+
             // 계산 버튼 클릭 이후 이벤트
             function run() {
                 let total_meso = 0;
@@ -396,26 +448,36 @@
                 if ($("#smeyrCheckbox").is(":checked")) {
                     let level = parseInt($("#smeyrLevel").val());
                     let num = parseInt($("#smeyrNumber").val());
-                    total_meso += smeyrCalMeso(level);
+                    total_meso += calMeso(level, 1);
+                    daySymbol = 16;
+
+                    if ($("#erdaSpectrum").is(":checked")) {
+                        daySymbol += 6;
+                    }
 
                     $('#tbody-content').append(`
                       <tr>
                           <td><img src="static/img/SymbolImage/smeyrSymbol.png" width="43" height="43"></td>
-                          <td style="vertical-align:middle;">${calDate(level, num, 22)}</td>
-                          <td style="vertical-align:middle;">${smeyrCalMeso(level).toLocaleString()}</td>
+                          <td style="vertical-align:middle;">${calDate(level, num, daySymbol, 0)}</td>
+                          <td style="vertical-align:middle;">${calMeso(level, 1).toLocaleString()}</td>
                       </tr>
                     `);
                 }
                 if ($("#ccCheckbox").is(":checked")) {
                     level = parseInt($("#ccLevel").val());
                     num = parseInt($("#ccNumber").val());
-                    total_meso += etcCalMeso(level);
+                    total_meso += calMeso(level, 2);
+                    daySymbol = 8;
+
+                    if ($("#hungryMuto").is(":checked")) {
+                        daySymbol += 15;
+                    }
 
                     $('#tbody-content').append(`
                         <tr>
                             <td><img src="static/img/SymbolImage/ccSymbol.png" width="43" height="43"></td>
-                            <td style="vertical-align:middle;">${calDate(level, num, 23)}</td>
-                            <td style="vertical-align:middle;">${etcCalMeso(level).toLocaleString()}</td>
+                            <td style="vertical-align:middle;">${calDate(level, num, daySymbol, 0)}</td>
+                            <td style="vertical-align:middle;">${calMeso(level, 2).toLocaleString()}</td>
                         </tr>
                     `);
                 }
@@ -426,67 +488,105 @@
                     let layerCoin;
                     if (layer < 170) layerCoin = layer * 3;
                     else layerCoin = 500;
-                    total_meso += etcCalMeso(level);
+                    total_meso += calMeso(level, 3);
+                    daySymbol = 9;
+
+                    if ($("#dreamBreaker").is(":checked")) {
+                        daySymbol += layerCoin / 30;
+                    }
 
                     $('#tbody-content').append(`
                         <tr>
                             <td><img src="static/img/SymbolImage/rhlSymbol.png" width="43" height="43"></td>
-                            <td style="vertical-align:middle;">${calDate(level, num, 8+(layerCoin/30)+1)}</td>
-                            <td style="vertical-align:middle;">${etcCalMeso(level).toLocaleString()}</td>
+                            <td style="vertical-align:middle;">${calDate(level, num, daySymbol, 0)}</td>
+                            <td style="vertical-align:middle;">${calMeso(level, 3).toLocaleString()}</td>
                         </tr>
                     `);
                 }
                 if ($("#arcnCheckbox").is(":checked")) {
                     level = parseInt($("#arcnLevel").val());
                     num = parseInt($("#arcnNumber").val());
-                    total_meso += etcCalMeso(level);
+                    total_meso += calMeso(level, 4);
                     let ssScore = parseInt($("#ssScore").val());
                     let ssCoin = ssScore / 1000;
+                    daySymbol = 8;
+
+                    if ($("#spritSaver").is(":checked")) {
+                        daySymbol += ssCoin / 3;
+                    }
 
                     $('#tbody-content').append(`
                         <tr>
                             <td><img src="static/img/SymbolImage/arcnSymbol.png" width="43" height="43"></td>
-                            <td style="vertical-align:middle;">${calDate(level, num, 8+(ssCoin/3))}</td>
-                            <td style="vertical-align:middle;">${etcCalMeso(level).toLocaleString()}</td>
+                            <td style="vertical-align:middle;">${calDate(level, num, daySymbol, 0)}</td>
+                            <td style="vertical-align:middle;">${calMeso(level, 4).toLocaleString()}</td>
                         </tr>
                     `);
                 }
                 if ($("#mrsCheckbox").is(":checked")) {
                     level = parseInt($("#mrsLevel").val());
                     num = parseInt($("#mrsNumber").val());
-                    total_meso += etcCalMeso(level);
+                    total_meso += calMeso(level, 5);
+                    daySymbol = 8;
+
+                    if ($("#enheimDefence").is(":checked")) {
+                        daySymbol += 6;
+                    }
 
                     $('#tbody-content').append(`
                         <tr>
                             <td><img src="static/img/SymbolImage/mrsSymbol.png" width="43" height="43"></td>
-                            <td style="vertical-align:middle;">${calDate(level, num, 14)}</td>
-                            <td style="vertical-align:middle;">${etcCalMeso(level).toLocaleString()}</td>
+                            <td style="vertical-align:middle;">${calDate(level, num, daySymbol, 0)}</td>
+                            <td style="vertical-align:middle;">${calMeso(level, 5).toLocaleString()}</td>
                         </tr>
                     `);
                 }
                 if ($("#asprCheckbox").is(":checked")) {
                     level = parseInt($("#asprLevel").val());
                     num = parseInt($("#asprNumber").val());
-                    total_meso += etcCalMeso(level);
+                    total_meso += calMeso(level, 6);
+                    daySymbol = 8;
+
+                    if ($("#protectAspr").is(":checked")) {
+                        daySymbol += 6;
+                    }
 
                     $('#tbody-content').append(`
                         <tr>
                             <td><img src="static/img/SymbolImage/asprSymbol.png" width="43" height="43"></td>
-                            <td style="vertical-align:middle;">${calDate(level, num, 14)}</td>
-                            <td style="vertical-align:middle;">${etcCalMeso(level).toLocaleString()}</td>
+                            <td style="vertical-align:middle;">${calDate(level, num, daySymbol, 0)}</td>
+                            <td style="vertical-align:middle;">${calMeso(level, 6).toLocaleString()}</td>
                         </tr>
                     `);
                 }
-                if ($("#athenCheckbox").is(":checked")) {
-                    level = parseInt($("#athenLevel").val());
-                    num = parseInt($("#athenNumber").val());
-                    total_meso += athenCalMeso(level);
+                if ($("#srnmCheckbox").is(":checked")) {
+                    level = parseInt($("#srnmLevel").val());
+                    num = parseInt($("#srnmNumber").val());
+                    total_meso += calMeso(level, 7);
+                    daySymbol = 5;
+
+                    if ($("#burningSernium").is(":checked")) {
+                        daySymbol = 10;
+                    }
+                    $('#tbody-content').append(`
+                        <tr>
+                            <td><img src="static/img/SymbolImage/srnmSymbol.png" width="43" height="43"></td>
+                            <td style="vertical-align:middle;">${calDate(level, num, daySymbol, 1)}</td>
+                            <td style="vertical-align:middle;">${calMeso(level, 7).toLocaleString()}</td>
+                        </tr>
+                    `);
+                }
+                if ($("#arksCheckbox").is(":checked")) {
+                    let level = parseInt($("#arksLevel").val());
+                    let num = parseInt($("#arksNumber").val());
+                    total_meso += calMeso(level, 8);
+                    daySymbol = 5;
 
                     $('#tbody-content').append(`
                         <tr>
-                            <td><img src="static/img/SymbolImage/athenSymbol.png" width="43" height="43"></td>
-                            <td style="vertical-align:middle;">${athenCalDate(level, num, 10)}</td>
-                            <td style="vertical-align:middle;">${athenCalMeso(level).toLocaleString()}</td>
+                            <td><img src="static/img/SymbolImage/arksSymbol.png" width="43" height="43"></td>
+                            <td style="vertical-align:middle;">${calDate(level, num, daySymbol, 1)}</td>
+                            <td style="vertical-align:middle;">${calMeso(level, 8).toLocaleString()}</td>
                         </tr>
                     `);
                 }
