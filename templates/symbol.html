@@ -59,28 +59,28 @@
                         <div class="form-group row justify-content-center">
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="smeyrCheckbox">
+                                    <input type="checkbox" class="custom-control-input" name="symbol" id="smeyrCheckbox">
                                     <label class="custom-control-label" for="smeyrCheckbox">
                                         <img src="static\img\SymbolImage\smeyrSymbol.png" width="60" height="40" title="소멸의 여로"></label>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="ccCheckbox">
+                                    <input type="checkbox" class="custom-control-input" name="symbol" id="ccCheckbox">
                                     <label class="custom-control-label" for="ccCheckbox">
                                         <img src="static\img\SymbolImage\ccSymbol.png" width="60" height="40" title="츄츄 아일랜드"></label>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="rhlCheckbox">
+                                    <input type="checkbox" class="custom-control-input" name="symbol" id="rhlCheckbox">
                                     <label class="custom-control-label" for="rhlCheckbox">
                                         <img src="static\img\SymbolImage\rhlSymbol.png" width="60" height="40" title="레헬른"></label>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="arcnCheckbox">
+                                    <input type="checkbox" class="custom-control-input" name="symbol" id="arcnCheckbox">
                                     <label class="custom-control-label" for="arcnCheckbox">
                                         <img src="static\img\SymbolImage\arcnSymbol.png" width="60" height="40" title="아르카나"></label>
                                 </div>
@@ -89,28 +89,28 @@
                         <div class="form-group row justify-content-center">
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="mrsCheckbox">
+                                    <input type="checkbox" class="custom-control-input" name="symbol" id="mrsCheckbox">
                                     <label class="custom-control-label" for="mrsCheckbox">
                                         <img src="static\img\SymbolImage\mrsSymbol.png" width="60" height="40" title="모라스"></label>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="asprCheckbox">
+                                    <input type="checkbox" class="custom-control-input" name="symbol" id="asprCheckbox">
                                     <label class="custom-control-label" for="asprCheckbox">
                                         <img src="static\img\SymbolImage\asprSymbol.png" width="60" height="40" title="에스페라"></label>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="srnmCheckbox">
+                                    <input type="checkbox" class="custom-control-input" name="symbol" id="srnmCheckbox">
                                     <label class="custom-control-label" for="srnmCheckbox">
                                         <img src="static\img\SymbolImage\srnmSymbol.png" width="60" height="40" title="세르니움"></label>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="arksCheckbox">
+                                    <input type="checkbox" class="custom-control-input" name="symbol" id="arksCheckbox">
                                     <label class="custom-control-label" for="arksCheckbox">
                                         <img src="static\img\SymbolImage\arksSymbol.png" width="60" height="40" title="아르크스"></label>
                                 </div>
@@ -377,7 +377,7 @@
             });
 
             let cnt = 0;
-            $(":checkbox").click(function() {
+            $('input:checkbox[name="symbol"]').click(function() {
                 var name = $(this).attr('id');
                 name = name.slice(0, -8);
                 name_input = name + "-input";
